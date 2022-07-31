@@ -2,7 +2,6 @@ package com.example.b07project;
 
 public class Event{
     String name;
-    int players_num;
     long start_time;
     long end_time;
     Venue location;
