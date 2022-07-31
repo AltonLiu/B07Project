@@ -1,6 +1,7 @@
 7/31/2022:
     What I did:
     - Created git repo and Jira project
-    - Created User abstract class and Activity class
+    - Created User abstract class, Venue class, and Activity class
     What I plan to do:
-    -
+    - Learn about FireBase
+    - Create Admin class
