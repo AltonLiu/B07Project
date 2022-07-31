@@ -1,14 +1,18 @@
+package com.example.b07project;
+
 public class Event{
+    String name;
     int players_num;
-    long start_time[12];
-    long end_time[12];
+    long start_time;
+    long end_time;
     Venue location;
-    Activity sports_type;
-    public Event(int num, long start, long end, Venue location, Activity activity){
+    Activity sport_type;
+    public Event(String name, int num, long start, long end, Venue location, Activity activity){
+        this.name = name;
         this.players_num = num;
         this.start_time = start;
         this.end_time = end;
         this.location = loaction;
-        this.sports_type = activity;
+        this.sport_type = activity;
     }
 }
