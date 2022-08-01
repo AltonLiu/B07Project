@@ -5,11 +5,11 @@ import java.util.*;
 public class Venue {
     String name;
     String address;
-    ArrayList<Activity> activities;
+    ArrayList<Sport> sports;
 
-    public Venue(String name, String address, ArrayList<Activity> activities) {
+    public Venue(String name, String address, ArrayList<Sport> sports) {
         this.name = name;
         this.address = address;
-        this.activities = activities;
+        this.sports = sports;
     }
 }

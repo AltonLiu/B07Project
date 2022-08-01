@@ -15,10 +15,10 @@ public class Admin extends User {
     /**
      * @param name Name of the venue
      * @param address Address of the venue
-     * @param activities An array list of the activities available at the venue
+     * @param sports An array list of the activities available at the venue
      */
-    public void createVenue (String name, String address, ArrayList<Activity> activities) {
-        Venue newVenue = new Venue(name, address, activities);
+    public void createVenue (String name, String address, ArrayList<Sport> sports) {
+        Venue newVenue = new Venue(name, address, sports);
         // Add code to upload newVenue to array list of all Venues on the server
     }
 }
