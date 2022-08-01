@@ -5,8 +5,8 @@ public class Customer extends User{
     ArrayList<Event> scheduled;
     ArrayList<Event> joined;
 
-    public Customer(String name, String pw, ArrayList<Event> sch, ArrayList<Event> joined){
-        super(name, pw, "Customer");
+    public Customer(String name, String firstname, String lastname, String pw, ArrayList<Event> sch, ArrayList<Event> joined){
+        super(name, firstname, lastname, pw, "Customer");
         this.scheduled = sch;
         this.joined = joined;
     }
