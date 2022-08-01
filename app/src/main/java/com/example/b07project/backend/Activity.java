@@ -1,4 +1,4 @@
-package com.example.b07project.frontend;
+package com.example.b07project.backend;
 
 public class Activity {
     String name;
