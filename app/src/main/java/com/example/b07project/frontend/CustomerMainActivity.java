@@ -1,8 +1,10 @@
-package com.example.b07project;
+package com.example.b07project.frontend;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.b07project.R;
 
 public class CustomerMainActivity extends AppCompatActivity {
 

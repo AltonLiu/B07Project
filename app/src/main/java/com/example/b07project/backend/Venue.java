@@ -1,4 +1,4 @@
-package com.example.b07project;
+package com.example.b07project.backend;
 
 import com.example.b07project.frontend.Activity;
 

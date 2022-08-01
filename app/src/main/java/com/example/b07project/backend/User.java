@@ -1,4 +1,4 @@
-package com.example.b07project;
+package com.example.b07project.backend;
 
 public abstract class User {
     String username;

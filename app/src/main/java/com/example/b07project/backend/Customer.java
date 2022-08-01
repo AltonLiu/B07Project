@@ -1,7 +1,8 @@
-package com.example.b07project;
+package com.example.b07project.backend;
+
 import java.util.ArrayList;
 
-public class Customer extends User{
+public class Customer extends User {
     ArrayList<Event> scheduled;
     ArrayList<Event> joined;
 
