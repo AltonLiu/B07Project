@@ -6,12 +6,11 @@ public class Event{
     long end_time;
     Venue location;
     Activity sport_type;
-    public Event(String name, int num, long start, long end, Venue location, Activity activity){
+    public Event(String name, long start, long end, Venue location, Activity activity){
         this.name = name;
-        this.players_num = num;
         this.start_time = start;
         this.end_time = end;
-        this.location = loaction;
+        this.location = location;
         this.sport_type = activity;
     }
 }
