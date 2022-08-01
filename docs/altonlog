@@ -5,3 +5,16 @@
     What I plan to do:
     - Learn about FireBase
     - Create Admin class
+    Roadblocks:
+    - N/A
+
+8/1/2022:
+    What I did:
+    - Created Admin class
+    - Added Firebase SDK to the project
+    - Learned about reading/writing data with Firebase
+    What I plan to do:
+    - Figure out how to implement a global list of venues on the server
+    - Implement functionality to add newly created Venues to server Venue list
+    Roadblocks:
+    - N/A
