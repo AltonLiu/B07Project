@@ -1,5 +1,7 @@
 package com.example.b07project;
 
+import com.example.b07project.frontend.Activity;
+
 public class Event{
     String name;
     long start_time;
