@@ -18,3 +18,18 @@
     - Implement functionality to add newly created Venues to server Venue list
     Roadblocks:
     - N/A
+8/2/2022:
+    What I did:
+    - Learned about reading/writing data with Firebase
+    What I plan to do:
+    - Set up Admin registration
+    Roadblocks:
+    - N/A
+8/3/2022:
+    What I did:
+    - Started working on app main page and user sign up page
+    - Started working on server node tree initialization
+    What I plan to do:
+    - Set up Admin registration and Admin database
+    Roadblocks:
+    - N/A
