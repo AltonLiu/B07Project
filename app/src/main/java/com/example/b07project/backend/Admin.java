@@ -11,6 +11,7 @@ public class Admin extends User {
     public Admin (String username, String firstname, String lastname, String password) {
         super(username, firstname, lastname, password, "Admin");
     }
+    //kevin's test push
 
     /**
      * @param name Name of the venue
