@@ -13,10 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.B07Project"
         tools:targetApi="31">
-        <sport
+        <activity
+            android:name=".frontend.RegisterActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".frontend.CustomerMainActivity"
             android:exported="false" />
-        <sport
+        <activity
             android:name=".frontend.MainActivity"
             android:exported="true">
             <intent-filter>
@@ -24,7 +28,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </sport>
+        </activity>
     </application>
 
 </manifest>
