@@ -38,10 +38,9 @@
 
 8/4/2022:
     What I did:
-    - Added functionality to create a new Admin object and upload this to the server
     - Added method to Admin to allow creating and uploading Venue objects
     - Worked on setting up login logic for both types of accounts
     What I plan to do:
     - Create admin landing page, which will appear once the admin logs in
     Roadblocks:
-    - Are we creating the UI using Figma or AS?
+    - Need someone to create the LoginActivity UI with a username and password input, plus a login button

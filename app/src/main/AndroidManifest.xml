@@ -14,7 +14,10 @@
         android:theme="@style/Theme.B07Project"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".frontend.AdminLanding"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".frontend.RegisterActivity"
