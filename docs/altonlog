@@ -28,8 +28,9 @@
 8/3/2022:
     What I did:
     - Started working on app main page and user sign up page
-    - Played around with writing and reading FireBase data\
+    - Played around with writing and reading FireBase data
     - Modified Sport, User, Venue, and Admin classes to allow uploading them to FireBase
+    - Added email field to User and refactored subclasses to account for this
     What I plan to do:
     - Set up Admin registration and Admin database
     Roadblocks:

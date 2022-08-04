@@ -6,18 +6,20 @@ public abstract class User {
     String lastname;
     String password;
     String userType;
+    String email;
 
     // Constructors
     public User() {
         // Default constructor required for FireBase
     }
 
-    public User(String username, String firstname, String lastname, String password, String userType) {
+    public User(String username, String firstname, String lastname, String password, String userType, String email) {
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
         this.userType = userType;
+        this.email = email;
     }
 
     // Getters
@@ -39,5 +41,9 @@ public abstract class User {
 
     public String getUserType() {
         return userType;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }
