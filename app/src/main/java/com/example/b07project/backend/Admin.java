@@ -26,14 +26,14 @@ public class Admin extends User {
         mDatabase.child("venues").child(name).setValue(newVenue);
     }
 
-    public int getVenues(){
+    public ArryList<Venue> getVenues(DatabaseReference mDatabase){
         //pull all venues from database and store in ArrayList
-        return 0;
+        return null;
     }
 
-    public int filterVenues(){
+    public ArrayList<Venue> filterVenues(DatabaseReference mDatabase){
         //call getVenues and filter through ArrayList
-        return 0;
+        return null;
     }
 
 }
