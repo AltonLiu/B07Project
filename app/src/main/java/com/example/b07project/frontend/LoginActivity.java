@@ -10,6 +10,8 @@ import com.google.firebase.database.*;
 import com.example.b07project.backend.*;
 import java.util.*;
 import android.os.Bundle;
+import android.widget.Toast;
+
 import com.example.b07project.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -19,19 +21,19 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // On button press (if login is successful, validateLogin method will redirect user)
+        // On button press (if login is successful, validateLogin method will redirect user, if not
+        // then a failed login toast will be displayed)
             // Call validate login
-            validateLogin("AltonL", "12345");
-            System.out.println("log in unsuccessful");
+            //validateLogin(username, password);
 
-            // TODO: Figure out how to detect a failed login in order to display failed login message
-            // - Might need to trigger failed login message inside validateLogin
-
+        // Tests
+        //DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        //validateLogin("admin123", "admintest123");
     }
 
     public void validateLogin(String username, String password) {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference userRef = mDatabase.child("users").child(username);
+        DatabaseReference userRef = mDatabase.child("Users").child(username);
 
         // Check account type of the user and read the server data accordingly
         userRef.child("userType").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -49,25 +51,37 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         // Note: dataSnapshot is a snapshot of the user's object on the server
-                        // Cast the object as an Admin or Customer depending on userType
+                        // Cast the object as an Admin or Customer depending on userType, then
+                        // if the password/username combo is correct, switch to customer or admin
+                        // activity and pass in the user's object to the next activity
                         if (userType.equals("Admin")) {
                             Admin adminObject = dataSnapshot.getValue(Admin.class);
                             if (adminObject.getPassword().equals(password)) {
-                                // TODO: Figure out how to pass the adminObject to next activity
-                                // - Look at Android tutorial for creating a basic app
-
-                                //Intent intent = new Intent(this, AdminLanding.class);
-                                //startActivity(intent);
-                                System.out.println("log in successful");
+                                Intent intent = new Intent(LoginActivity.this, AdminLanding.class);
+                                intent.putExtra("adminObject", adminObject);
+                                startActivity(intent);
+                            } else {
+                                // Display login failed toast
+                                Toast loginFailedToast = Toast.makeText(getApplicationContext(),
+                                        "Incorrect username/password",
+                                        Toast.LENGTH_LONG);
+                                loginFailedToast.show();
                             }
                         } else {
                             Customer customerObject = dataSnapshot.getValue(Customer.class);
                             if (customerObject.getPassword().equals(password)) {
-                                System.out.println("log in successful");
+                                Intent intent = new Intent(LoginActivity.this, CustomerMainActivity.class);
+                                intent.putExtra("customerObject", customerObject);
+                                startActivity(intent);
+                            } else {
+                                // Display login failed toast
+                                Toast loginFailedToast = Toast.makeText(getApplicationContext(),
+                                        "Incorrect username/password",
+                                        Toast.LENGTH_LONG);
+                                loginFailedToast.show();
                             }
                         }
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {}
                 };
