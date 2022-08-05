@@ -1,26 +1,43 @@
 package com.example.b07project.frontend;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.*;
-
-import com.google.android.gms.tasks.*;
-import com.google.firebase.database.*;
-import com.example.b07project.backend.*;
-import java.util.*;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import com.example.b07project.R;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button registerBtn, loginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Tests
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        registerBtn = (Button) findViewById(R.id.registerbutton);
+        loginBtn = (Button) findViewById(R.id.loginbutton);
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }
