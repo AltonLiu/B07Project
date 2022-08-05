@@ -1,6 +1,10 @@
 package com.example.b07project.backend;
 
-public abstract class User {
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public abstract class User implements Serializable {
     String username;
     String firstname;
     String lastname;

@@ -7,7 +7,6 @@
     - Create Admin class
     Roadblocks:
     - N/A
-
 8/1/2022:
     What I did:
     - Created Admin class
@@ -35,7 +34,6 @@
     - Set up Admin registration and Admin database
     Roadblocks:
     - N/A
-
 8/4/2022:
     What I did:
     - Added method to Admin to allow creating and uploading Venue objects
@@ -44,3 +42,10 @@
     - Create admin landing page, which will appear once the admin logs in
     Roadblocks:
     - Need someone to create the LoginActivity UI with a username and password input, plus a login button
+8/5/2022:
+    What I did:
+    - Finished setting up login logic for both types of accounts and passing object of the user to next screen
+    What I plan to do:
+    - Create admin landing page, which will appear once the admin logs in and allows admins to create venues
+    Roadblocks:
+    - N/A
