@@ -12,11 +12,9 @@ public class AuthValidation {
     /**
      * @name isEmpty
      * @param field Represents authentication field to be validated
-     * @return true if string isn't empty, false if it is
+     * @return true if string is empty, false o/w
      */
-    public static boolean isNotEmpty(String field){
-        return field.length() > 0;
-    }
+    public static boolean isEmpty(String field){return field.length() == 0 || field == null;}
 
     /**
      * @name isValidUsername
@@ -51,5 +49,15 @@ public class AuthValidation {
      */
     public static boolean isValidName(String name){
         return name.length() >= NAME_MIN_LENGTH;
+    }
+
+    /**
+     * @name samePassword
+     * @param password Represents first password to be checked
+     * @param password2 Represents seconds password to be checked
+     * @return true if password match, false o/w
+     */
+    public static boolean samePassword(String password,String password2){
+        return password.equals(password2);
     }
 }

@@ -3,12 +3,28 @@ package com.example.b07project.backend;
 import java.util.ArrayList;
 
 public class Customer extends User {
-    ArrayList<Event> scheduled;
-    ArrayList<Event> joined;
+    private ArrayList<Event> scheduled;
+    private ArrayList<Event> joined;
 
-    public Customer(String name, String firstname, String lastname, String pw, ArrayList<Event> sch, ArrayList<Event> joined, String email){
-        super(name, firstname, lastname, pw, "Customer", email);
+    public Customer(String username, String firstname, String lastname, String pw, String email, ArrayList<Event> sch, ArrayList<Event> joined){
+        super(username, firstname, lastname, pw, "Customer", email);
         this.scheduled = sch;
+        this.joined = joined;
+    }
+
+    public ArrayList<Event> getJoined() {
+        return joined;
+    }
+
+    public ArrayList<Event> getScheduled() {
+        return scheduled;
+    }
+
+    public void setScheduled(ArrayList<Event> scheduled){
+        this.scheduled = scheduled;
+    }
+
+    public void setJoined(ArrayList<Event> joined){
         this.joined = joined;
     }
 

@@ -1,8 +1,8 @@
 package com.example.b07project.backend;
 
 public class Sport {
-    String name;
-    int numParticipants;
+    private String name;
+    private int numParticipants;
 
     public Sport() {
         // Default constructor required for FireBase
@@ -19,5 +19,13 @@ public class Sport {
 
     public int getNumParticipants() {
         return numParticipants;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setNumParticipants(int numParticipants) {
+        this.numParticipants = numParticipants;
     }
 }
