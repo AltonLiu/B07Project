@@ -49,3 +49,11 @@
     - Create admin landing page, which will appear once the admin logs in and allows admins to create venues
     Roadblocks:
     - N/A
+8/6/2022:
+    What I did:
+    - Finished backend logic for creating and uploading venues
+    What I plan to do:
+    - Create admin landing page, which will appear once the admin logs in and allows admins to create venues
+    - Create venue creation UI
+    Roadblocks:
+    - N/A

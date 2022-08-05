@@ -18,6 +18,11 @@ public class AdminLanding extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Admin adminObject = (Admin) getIntent().getSerializableExtra("adminObject");
-        System.out.println(adminObject.getUsername());
+
+        // Tests
+//        System.out.println(adminObject.getUsername());
+//        Intent intent = new Intent(this, VenueCreationActivity.class);
+//        intent.putExtra("adminObject", adminObject);
+//        startActivity(intent);
     }
 }

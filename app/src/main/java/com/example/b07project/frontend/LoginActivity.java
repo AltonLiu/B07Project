@@ -10,16 +10,22 @@ import com.google.firebase.database.*;
 import com.example.b07project.backend.*;
 import java.util.*;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.b07project.R;
 
 public class LoginActivity extends AppCompatActivity {
+    private TextView errorText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        errorText = (TextView) findViewById(R.id.venueCreationErrorMSG);
 
         // On button press (if login is successful, validateLogin method will redirect user, if not
         // then a failed login toast will be displayed)
@@ -41,6 +47,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 // If the user's account type is null, that means that username doesn't exist
                 if (!task.isSuccessful() || task.getResult().getValue() == null) {
+                    // Display login failed message
+                    errorText.setText("Incorrect username/password");
+                    errorText.setVisibility(View.VISIBLE);
                     return;
                 }
 
@@ -61,11 +70,9 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("adminObject", adminObject);
                                 startActivity(intent);
                             } else {
-                                // Display login failed toast
-                                Toast loginFailedToast = Toast.makeText(getApplicationContext(),
-                                        "Incorrect username/password",
-                                        Toast.LENGTH_LONG);
-                                loginFailedToast.show();
+                                // Display login failed message
+                                errorText.setText("Incorrect username/password");
+                                errorText.setVisibility(View.VISIBLE);
                             }
                         } else {
                             Customer customerObject = dataSnapshot.getValue(Customer.class);
@@ -74,11 +81,9 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("customerObject", customerObject);
                                 startActivity(intent);
                             } else {
-                                // Display login failed toast
-                                Toast loginFailedToast = Toast.makeText(getApplicationContext(),
-                                        "Incorrect username/password",
-                                        Toast.LENGTH_LONG);
-                                loginFailedToast.show();
+                                // Display login failed message
+                                errorText.setText("Incorrect username/password");
+                                errorText.setVisibility(View.VISIBLE);
                             }
                         }
                     }

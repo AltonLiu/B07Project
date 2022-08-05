@@ -23,10 +23,10 @@ public class Admin extends User {
         Venue newVenue = new Venue(name, address, sports);
 
         // Uploads newVenue to database of all Venues on the server
-        mDatabase.child("venues").child(name).setValue(newVenue);
+        mDatabase.child("Venues").child(name).setValue(newVenue);
     }
 
-    public ArryList<Venue> getVenues(DatabaseReference mDatabase){
+    public ArrayList<Venue> getVenues(DatabaseReference mDatabase){
         //pull all venues from database and store in ArrayList
         return null;
     }
