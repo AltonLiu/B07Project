@@ -25,4 +25,15 @@ public class Admin extends User {
         // Uploads newVenue to database of all Venues on the server
         mDatabase.child("venues").child(name).setValue(newVenue);
     }
+
+    public int getVenues(){
+        //pull all venues from database and store in ArrayList
+        return 0;
+    }
+
+    public int filterVenues(){
+        //call getVenues and filter through ArrayList
+        return 0;
+    }
+
 }
