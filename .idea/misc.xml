@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/drawable/buttons.xml" value="0.3665" />
+        <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_admin_landing.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_customer_main.xml" value="0.5" />
-        <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_customer_main.xml" value="0.4363876342773437" />
       </map>
     </option>

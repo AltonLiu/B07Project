@@ -26,7 +26,7 @@ public class Admin extends User {
         mDatabase.child("venues").child(name).setValue(newVenue);
     }
 
-    public ArryList<Venue> getVenues(DatabaseReference mDatabase){
+    public ArrayList<Venue> getVenues(DatabaseReference mDatabase){
         //pull all venues from database and store in ArrayList
         return null;
     }

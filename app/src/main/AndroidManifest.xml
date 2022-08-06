@@ -27,6 +27,7 @@
         </activity>
         <activity
             android:name=".frontend.RegisterActivity"
+            android:parentActivityName=".frontend.MainActivity"
             android:exported="false" />
         <activity
             android:name=".frontend.CustomerMainActivity"

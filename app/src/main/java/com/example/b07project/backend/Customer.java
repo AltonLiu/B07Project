@@ -11,6 +11,7 @@ public class Customer extends User {
         this.scheduled = sch;
         this.joined = joined;
     }
+    public Customer(){}
 
     public ArrayList<Event> getJoined() {
         return joined;
