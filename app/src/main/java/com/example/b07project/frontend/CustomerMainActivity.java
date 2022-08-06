@@ -49,6 +49,6 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
-        // Another interface callback
+        // interface callback method, no actual implements
     }
 }

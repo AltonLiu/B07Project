@@ -1,7 +1,9 @@
 package com.example.b07project.backend;
 
-public class Event{
-    private String name;
+import java.io.Serializable;
+
+public class Event implements Serializable {
+    private static String name;
     private long start_time;
     private long end_time;
     private Venue location;
@@ -29,7 +31,7 @@ public class Event{
         return sport_type;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
