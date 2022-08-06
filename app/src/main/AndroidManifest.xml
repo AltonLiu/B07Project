@@ -16,10 +16,22 @@
         tools:targetApi="31">
         <activity
             android:name=".frontend.VenueCreationActivity"
-            android:exported="false" />
+            android:parentActivityName=".frontend.AdminLanding">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.AdminLanding" />
+        </activity>
         <activity
             android:name=".frontend.AdminLanding"
-            android:exported="false" />
+            android:parentActivityName=".frontend.LoginActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.LoginActivity" />
+        </activity>
         <activity
             android:name=".frontend.LoginActivity"
             android:parentActivityName=".frontend.MainActivity">
@@ -31,10 +43,22 @@
         </activity>
         <activity
             android:name=".frontend.RegisterActivity"
-            android:exported="false" />
+            android:parentActivityName=".frontend.MainActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.MainActivity" />
+        </activity>
         <activity
             android:name=".frontend.CustomerMainActivity"
-            android:exported="false" />
+            android:parentActivityName=".frontend.LoginActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.LoginActivity" />
+        </activity>
         <activity
             android:name=".frontend.MainActivity"
             android:exported="true">

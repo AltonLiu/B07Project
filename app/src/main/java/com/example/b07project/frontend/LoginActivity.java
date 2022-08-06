@@ -27,14 +27,14 @@ public class LoginActivity extends AppCompatActivity {
 
         errorText = (TextView) findViewById(R.id.venueCreationErrorMSG);
 
-        // On button press (if login is successful, validateLogin method will redirect user, if not
+        // On venueCreationButton press (if login is successful, validateLogin method will redirect user, if not
         // then a failed login toast will be displayed)
             // Call validate login
             //validateLogin(username, password);
 
         // Tests
-        //DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        //validateLogin("admin123", "admintest123");
+//        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+//        validateLogin("admin123", "admintest123");
     }
 
     public void validateLogin(String username, String password) {

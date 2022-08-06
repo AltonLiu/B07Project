@@ -52,8 +52,9 @@
 8/6/2022:
     What I did:
     - Finished backend logic for creating and uploading venues
+    - Added button to admin landing page to go to venue creation screen
+    - Created Venue creation screen with field allowing user input
     What I plan to do:
-    - Create admin landing page, which will appear once the admin logs in and allows admins to create venues
-    - Create venue creation UI
+    - Finish and test venue creation UI
     Roadblocks:
     - N/A

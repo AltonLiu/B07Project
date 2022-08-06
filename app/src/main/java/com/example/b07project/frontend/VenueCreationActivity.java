@@ -42,11 +42,13 @@ public class VenueCreationActivity extends AppCompatActivity {
 
         Admin adminObject = (Admin) getIntent().getSerializableExtra("adminObject");
         errorText = (TextView) findViewById(R.id.venueCreationErrorMSG);
+        // TODO: create an array list of sports and their attributes, which the user will choose from for the venue creation
 
-        // Test
-//        ArrayList<Sport> sports = new ArrayList<>();
-//        sports.add(new Sport("Baseball", 18));
-//        validateVenue(adminObject, "Test Venue 1", "123 Sesame Street", sports);
+        // Tests
+        ArrayList<Sport> sports = new ArrayList<>();
+        sports.add(new Sport("Baseball", 18));
+
+        validateVenue(adminObject, "Test Venue 1", "123 Sesame Street", sports);
     }
 
     public void validateVenue(Admin adminObject, String name, String address, ArrayList<Sport> sports) {
