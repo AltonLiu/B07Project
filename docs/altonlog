@@ -54,6 +54,7 @@
     - Finished backend logic for creating and uploading venues
     - Added button to admin landing page to go to venue creation screen
     - Created Venue creation screen with field allowing user input
+    - Resolved conflicts in login UI update branch and merged with develop
     What I plan to do:
     - Finish and test venue creation UI
     Roadblocks:
