@@ -32,9 +32,6 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-        Toast.makeText(parent.getContext(),
-                "OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString(),
-                Toast.LENGTH_SHORT).show();
         // An item was selected, start the selected activity
         Customer customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
         final Intent intent;
