@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,14 +44,46 @@ public class VenueCreationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_venue_creation);
 
         Admin adminObject = (Admin) getIntent().getSerializableExtra("adminObject");
+
         errorText = (TextView) findViewById(R.id.venueCreationErrorMSG);
-        // TODO: create an array list of sports and their attributes, which the user will choose from for the venue creation
+        EditText venueNameField = (EditText) findViewById(R.id.venueNameField);
+        EditText venueAddressField = (EditText) findViewById(R.id.venueAddressField);
+        CheckBox[] checkBoxes = {
+                (CheckBox) findViewById(R.id.checkBox5),
+                (CheckBox) findViewById(R.id.checkBox6),
+                (CheckBox) findViewById(R.id.checkBox7),
+                (CheckBox) findViewById(R.id.checkBox8),
+                (CheckBox) findViewById(R.id.checkBox9),
+                (CheckBox) findViewById(R.id.checkBox10)
+        };
+        Button validateVenueButton = (Button) findViewById(R.id.validateVenueButton);
 
-        // Tests
-        ArrayList<Sport> sports = new ArrayList<>();
-        sports.add(new Sport("Baseball", 18));
+        ArrayList<Sport> availableSports = new ArrayList<>();
+        availableSports.add(new Sport("Baseball", 18));
+        availableSports.add(new Sport("Basketball", 10));
+        availableSports.add(new Sport("Ping Pong", 2));
+        availableSports.add(new Sport("Soccer", 22));
+        availableSports.add(new Sport("Tennis", 4));
+        availableSports.add(new Sport("Volleyball", 12));
 
-        validateVenue(adminObject, "Test Venue 1", "123 Sesame Street", sports);
+        // TODO: read user inputs and call validateVenue
+        validateVenueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = venueNameField.getText().toString();
+                String address = venueAddressField.getText().toString();
+                ArrayList<Sport> sports = new ArrayList<>();
+
+                // For each box that is checked, add the corresponding sport to the sports arraylist
+                for (int i = 0; i < checkBoxes.length; i++) {
+                    if (checkBoxes[i].isChecked()) {
+                        sports.add(availableSports.get(i));
+                    }
+                }
+
+                validateVenue(adminObject, name, address, sports);
+            }
+        });
     }
 
     public void validateVenue(Admin adminObject, String name, String address, ArrayList<Sport> sports) {
@@ -68,6 +103,7 @@ public class VenueCreationActivity extends AppCompatActivity {
                 // Check if venue name exists in DB
                 if(!snapshot.exists()){
                     adminObject.createVenue(mDatabase, name, address, sports);
+                    Toast.makeText(VenueCreationActivity.this, "Venue has been added", Toast.LENGTH_LONG).show();
                 } else{
                     errorText.setText("Venue name already exists");
                     errorText.setVisibility(View.VISIBLE);
