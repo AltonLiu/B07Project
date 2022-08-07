@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
     public void validateLogin(String username, String password) {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         DatabaseReference userRef = mDatabase.child("Users").child(username);
-
+        progress.setVisibility(View.VISIBLE);
         // Check account type of the user and read the server data accordingly
         userRef.child("userType").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -91,22 +91,29 @@ public class LoginActivity extends AppCompatActivity {
                         if (userType.equals("Admin")) {
                             Admin adminObject = dataSnapshot.getValue(Admin.class);
                             if (adminObject.getPassword().equals(password)) {
+                                progress.setVisibility(View.INVISIBLE);
                                 Intent intent = new Intent(LoginActivity.this, AdminLanding.class);
                                 intent.putExtra("adminObject", adminObject);
                                 startActivity(intent);
                             } else {
-                                // Display login failed message
+                                // Display login failed
+                                progress.setVisibility(View.INVISIBLE);
+                                Log.d("Admin", "Login Failed");
                                 errorMSG.setText("Incorrect username/password");
                                 errorMSG.setVisibility(View.VISIBLE);
                             }
                         } else {
                             Customer customerObject = dataSnapshot.getValue(Customer.class);
                             if (customerObject.getPassword().equals(password)) {
+                                Log.d("Admin", "Login Success");
+                                progress.setVisibility(View.INVISIBLE);
                                 Intent intent = new Intent(LoginActivity.this, CustomerMainActivity.class);
                                 intent.putExtra("customerObject", customerObject);
                                 startActivity(intent);
                             } else {
                                 // Display login failed message
+                                Log.d("Customer", "Login Failed");
+                                progress.setVisibility(View.INVISIBLE);
                                 errorMSG.setText("Incorrect username/password");
                                 errorMSG.setVisibility(View.VISIBLE);
                             }

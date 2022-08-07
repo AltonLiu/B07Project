@@ -1,8 +1,9 @@
 package com.example.b07project.backend;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Venue {
+public class Venue implements Serializable {
     private String name;
     private String address;
     private ArrayList<Sport> sports;

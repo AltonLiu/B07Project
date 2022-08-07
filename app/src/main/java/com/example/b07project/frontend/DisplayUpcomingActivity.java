@@ -3,6 +3,8 @@ package com.example.b07project.frontend;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import com.example.b07project.R;
+
 
 public class DisplayUpcomingActivity extends AppCompatActivity {
 

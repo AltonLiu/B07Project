@@ -1,6 +1,8 @@
 package com.example.b07project.backend;
 
-public class Sport {
+import java.io.Serializable;
+
+public class Sport implements Serializable {
     private String name;
     private int numParticipants;
 
