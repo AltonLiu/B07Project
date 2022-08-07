@@ -29,20 +29,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import com.example.b07project.backend.*;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     private FirebaseAuth mAuth;
-    private final String DB_URL = "https://b07-project-ee0dc-default-rtdb.firebaseio.com/";
     private String email, username, firstname, lastname, password, confirmPassword ,usertype;
     private Button registerButton;
-    private TextView errorText;
+    private TextView errorText, login;
     private EditText emailField, passwordField, confirmPasswordField, firstNameField, lastNameField, usernameField;
     private Spinner userTypeField;
     private ProgressBar progress;
@@ -51,8 +47,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        errorText = (TextView) findViewById(R.id.errorMSG);
+        login = (TextView) findViewById(R.id.LogInHaveAcctBtn);
+        errorText = (TextView) findViewById(R.id.errorMSGRegister);
         registerButton = (Button) findViewById(R.id.RegisterButton);
         emailField = (EditText) findViewById(R.id.emailField);
         firstNameField = (EditText) findViewById(R.id.firstnameField);
@@ -60,7 +56,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         usernameField = (EditText) findViewById(R.id.usernameField);
         passwordField = (EditText) findViewById(R.id.passwordField);
         confirmPasswordField = (EditText) findViewById(R.id.confirmPasswordField);
-        progress = (ProgressBar) findViewById(R.id.progressBar);
+        progress = (ProgressBar) findViewById(R.id.progressBarRegister);
         progress.setVisibility(View.INVISIBLE);
         mAuth = FirebaseAuth.getInstance();
 
@@ -70,6 +66,17 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         userTypeField.setAdapter(adapter);
 
         userTypeField.setOnItemSelectedListener(this);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                progress.setVisibility(View.INVISIBLE);
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override

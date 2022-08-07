@@ -15,16 +15,16 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".DisplayEventActivity"
+            android:name=".frontend.DisplayEventActivity"
             android:exported="false" />
         <activity
-            android:name=".DisplayUpcomingActivity"
+            android:name=".frontend.DisplayUpcomingActivity"
             android:exported="false" />
         <activity
-            android:name=".DisplayJoinedActivity"
+            android:name=".frontend.DisplayJoinedActivity"
             android:exported="false" />
         <activity
-            android:name=".DisplayScheduledActivity"
+            android:name=".frontend.DisplayScheduledActivity"
             android:exported="false" />
         <activity
             android:name=".frontend.VenueCreationActivity"

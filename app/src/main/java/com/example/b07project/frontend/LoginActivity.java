@@ -6,11 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.*;
 
 import com.google.android.gms.tasks.*;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.*;
 import com.example.b07project.backend.*;
-import java.util.*;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,24 +22,45 @@ import android.widget.Toast;
 import com.example.b07project.R;
 
 public class LoginActivity extends AppCompatActivity {
-    private TextView errorText;
+    private FirebaseAuth mAuth;
+    private DatabaseReference ref;
+    private Button LogIn;
+    private EditText usernameField, passwordField;
+    private TextView errorMSG, registerBtn;
+    private ProgressBar progress;
+    private String username, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        errorText = (TextView) findViewById(R.id.venueCreationErrorMSG);
+        LogIn = (Button) findViewById(R.id.LogInBtn);
+        usernameField = (EditText) findViewById(R.id.usernameFieldLogin);
+        passwordField = (EditText) findViewById(R.id.passwordFieldLogIn);
+        progress = (ProgressBar) findViewById(R.id.progressBarLogIn);
+        errorMSG = (TextView) findViewById(R.id.errorMSGLogIn);
+        registerBtn = (TextView) findViewById(R.id.RegisterDontHaveAcctBtn);
+        progress.setVisibility(View.INVISIBLE);
 
-        // On venueCreationButton press (if login is successful, validateLogin method will redirect user, if not
-        // then a failed login toast will be displayed)
-            // Call validate login
-            //validateLogin(username, password);
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                progress.setVisibility(View.INVISIBLE);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        // Tests
-//        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-//        validateLogin("admin123", "admintest123");
-    }
+        LogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                username = usernameField.getText().toString();
+                password = passwordField.getText().toString();
+                validateLogin(username,password);
+                }
+            });
+        }
 
     public void validateLogin(String username, String password) {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -48,8 +73,8 @@ public class LoginActivity extends AppCompatActivity {
                 // If the user's account type is null, that means that username doesn't exist
                 if (!task.isSuccessful() || task.getResult().getValue() == null) {
                     // Display login failed message
-                    errorText.setText("Incorrect username/password");
-                    errorText.setVisibility(View.VISIBLE);
+                    errorMSG.setText("Incorrect username/password");
+                    errorMSG.setVisibility(View.VISIBLE);
                     return;
                 }
 
@@ -71,8 +96,8 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(intent);
                             } else {
                                 // Display login failed message
-                                errorText.setText("Incorrect username/password");
-                                errorText.setVisibility(View.VISIBLE);
+                                errorMSG.setText("Incorrect username/password");
+                                errorMSG.setVisibility(View.VISIBLE);
                             }
                         } else {
                             Customer customerObject = dataSnapshot.getValue(Customer.class);
@@ -82,8 +107,8 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(intent);
                             } else {
                                 // Display login failed message
-                                errorText.setText("Incorrect username/password");
-                                errorText.setVisibility(View.VISIBLE);
+                                errorMSG.setText("Incorrect username/password");
+                                errorMSG.setVisibility(View.VISIBLE);
                             }
                         }
                     }
