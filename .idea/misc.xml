@@ -3,13 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/drawable/buttons.xml" value="0.3665" />
         <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_admin_landing.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_customer_main.xml" value="0.5" />
         <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/ryan_/AndroidStudioProjects/B07Venue/app/src/main/res/layout/activity_register.xml" value="0.25" />
+=======
+        <entry key="..\:/Users/super/Desktop/CSCB07/B07Project/app/src/main/res/layout-w936dp/activity_login.xml" value="0.536" />
+        <entry key="..\:/Users/super/Desktop/CSCB07/B07Project/app/src/main/res/layout/activity_admin_landing.xml" value="0.264" />
+        <entry key="..\:/Users/super/Desktop/CSCB07/B07Project/app/src/main/res/layout/activity_login.xml" value="0.2713541666666667" />
+        <entry key="..\:/Users/super/Desktop/CSCB07/B07Project/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/super/Desktop/CSCB07/B07Project/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/super/Desktop/CSCB07/B07Project/app/src/main/res/layout/activity_venue_creation.xml" value="0.4" />
+>>>>>>> develop
         <entry key="app/src/main/res/layout/activity_customer_main.xml" value="0.4363876342773437" />
+        <entry key="app/src/main/res/layout/activity_display_joined.xml" value="0.3343782654127482" />
       </map>
     </option>
   </component>

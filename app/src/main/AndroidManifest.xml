@@ -5,7 +5,6 @@
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -13,13 +12,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.B07Project"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".frontend.AdminLanding"
+            android:name=".frontend.DisplayEventActivity"
             android:exported="false" />
+        <activity
+            android:name=".frontend.DisplayUpcomingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.DisplayJoinedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.DisplayScheduledActivity"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.VenueCreationActivity"
+            android:parentActivityName=".frontend.AdminLanding">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.AdminLanding" />
+        </activity>
+        <activity
+            android:name=".frontend.AdminLanding"
+            android:parentActivityName=".frontend.LoginActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.LoginActivity" />
+        </activity>
         <activity
             android:name=".frontend.LoginActivity"
             android:parentActivityName=".frontend.MainActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -27,11 +55,22 @@
         </activity>
         <activity
             android:name=".frontend.RegisterActivity"
-            android:parentActivityName=".frontend.MainActivity"
-            android:exported="false" />
+            android:parentActivityName=".frontend.MainActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.MainActivity" />
+        </activity>
         <activity
             android:name=".frontend.CustomerMainActivity"
-            android:exported="false" />
+            android:parentActivityName=".frontend.LoginActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.LoginActivity" />
+        </activity>
         <activity
             android:name=".frontend.MainActivity"
             android:exported="true">

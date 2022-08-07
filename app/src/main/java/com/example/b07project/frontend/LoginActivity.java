@@ -22,7 +22,6 @@ import android.widget.Toast;
 import com.example.b07project.R;
 
 public class LoginActivity extends AppCompatActivity {
-
     private FirebaseAuth mAuth;
     private DatabaseReference ref;
     private Button LogIn;
@@ -59,19 +58,9 @@ public class LoginActivity extends AppCompatActivity {
                 username = usernameField.getText().toString();
                 password = passwordField.getText().toString();
                 validateLogin(username,password);
-
                 }
             });
         }
-
-        // On button press (if login is successful, validateLogin method will redirect user, if not
-        // then a failed login toast will be displayed)
-            // Call validate login
-            //validateLogin(username, password);
-
-        // Tests
-        //DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        //validateLogin("admin123", "admintest123");
 
     public void validateLogin(String username, String password) {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -83,6 +72,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 // If the user's account type is null, that means that username doesn't exist
                 if (!task.isSuccessful() || task.getResult().getValue() == null) {
+                    // Display login failed message
+                    errorMSG.setText("Incorrect username/password");
+                    errorMSG.setVisibility(View.VISIBLE);
                     return;
                 }
 
@@ -103,11 +95,9 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("adminObject", adminObject);
                                 startActivity(intent);
                             } else {
-                                // Display login failed toast
-                                Toast loginFailedToast = Toast.makeText(getApplicationContext(),
-                                        "Incorrect username/password",
-                                        Toast.LENGTH_LONG);
-                                loginFailedToast.show();
+                                // Display login failed message
+                                errorMSG.setText("Incorrect username/password");
+                                errorMSG.setVisibility(View.VISIBLE);
                             }
                         } else {
                             Customer customerObject = dataSnapshot.getValue(Customer.class);
@@ -116,11 +106,9 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("customerObject", customerObject);
                                 startActivity(intent);
                             } else {
-                                // Display login failed toast
-                                Toast loginFailedToast = Toast.makeText(getApplicationContext(),
-                                        "Incorrect username/password",
-                                        Toast.LENGTH_LONG);
-                                loginFailedToast.show();
+                                // Display login failed message
+                                errorMSG.setText("Incorrect username/password");
+                                errorMSG.setVisibility(View.VISIBLE);
                             }
                         }
                     }
