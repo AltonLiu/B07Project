@@ -5,12 +5,12 @@ import android.os.Parcelable;
 import java.io.Serializable;
 
 public abstract class User implements Serializable {
-    String username;
-    String firstname;
-    String lastname;
-    String password;
-    String userType;
-    String email;
+    private String username;
+    private String firstname;
+    private String lastname;
+    private String password;
+    private String userType;
+    private String email;
 
     // Constructors
     public User() {

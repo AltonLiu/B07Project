@@ -1,8 +1,9 @@
 package com.example.b07project.backend;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Customer extends User {
+public class Customer extends User implements Serializable {
     private ArrayList<Event> scheduled;
     private ArrayList<Event> joined;
 
