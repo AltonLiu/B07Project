@@ -45,6 +45,7 @@ public class DisplayEventListActivity extends AppCompatActivity {
                 //start displayEventActivity when the button onclick
                 public void onClick(View view) {
                     Intent is = new Intent(DisplayEventListActivity.this, DisplayEventActivity.class);
+                    is.putExtra("customerObject", customerObject);
                     is.putExtra("event", e);
                     startActivity(is);}
             });

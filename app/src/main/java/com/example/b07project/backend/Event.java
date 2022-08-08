@@ -17,6 +17,25 @@ public class Event implements Serializable {
         this.sport_type = sport;
     }
 
+    @Override
+    public boolean equals(Object o){
+        if (o == this) {
+            return true;
+        }
+
+        /* Check if o is an instance of Complex or not
+          "null instanceof [type]" also returns false */
+        if (!(o instanceof Event)) {
+            return false;
+        }
+
+        // typecast o to Complex so that we can compare data members
+        Event event = (Event) o;
+
+        // Compare the data members and return accordingly
+        return this.name.equals(event.getName());
+    }
+
     public Event(){}
 
     public long getEnd_time() {
