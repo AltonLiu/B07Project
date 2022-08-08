@@ -11,11 +11,11 @@ import android.widget.LinearLayout;
 
 import com.example.b07project.R;
 import com.example.b07project.backend.Customer;
-import com.example.b07project.backend.Event;
+import com.example.b07project.backend.Venues;
 
 import java.util.ArrayList;
 
-public class DisplayVenueListActivity {
+public class DisplayVenueListActivity extends AppCompatActivity {
     ArrayList<Event> display_events;
-    
+
 }
