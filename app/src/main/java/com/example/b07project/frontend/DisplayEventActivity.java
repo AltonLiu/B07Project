@@ -16,13 +16,15 @@ import com.example.b07project.backend.Event;
 public class DisplayEventActivity extends AppCompatActivity {
     TextView startTime, endTime, location, sport, name;
     Button status;
+    Customer customerObject;
+    Event e;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_event);
         //get passed object
-        Customer customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
-        Event e = (Event) getIntent().getSerializableExtra("event");
+        customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
+        e = (Event) getIntent().getSerializableExtra("event");
         startTime = (TextView) findViewById(R.id.eventstarttime);
         endTime = (TextView) findViewById(R.id.eventendtime);
         location = (TextView) findViewById(R.id.eventvenue);
