@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.example.b07project.R;
 import com.example.b07project.backend.Customer;
 import com.example.b07project.backend.Event;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class DisplayEventActivity extends AppCompatActivity {
     TextView startTime, endTime, location, sport, name;
@@ -57,6 +59,8 @@ public class DisplayEventActivity extends AppCompatActivity {
                         break;
                     case "join":
                         customerObject.join_event(e);
+                        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+                        mDatabase.child("users").child(customerObject.getUsername()).child("joined").setValue(e);
                         Toast.makeText(getApplicationContext(),"joined!",Toast.LENGTH_SHORT).show();
                         status.setText("joined");
                         break;

@@ -3,6 +3,7 @@ package com.example.b07project.frontend;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +27,7 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DisplayEventListActivity extends AppCompatActivity {
     ArrayList<Event> display_events;
@@ -46,13 +48,31 @@ public class DisplayEventListActivity extends AppCompatActivity {
             case "upcoming":
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
                 DatabaseReference eventsRef = mDatabase.child("Events");
+                Context cur = this;
                 ValueEventListener eventListener = new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        display_events = new ArrayList<Event>();
+                        ArrayList<Event> temp = new ArrayList<Event>();
                         for(DataSnapshot ds : dataSnapshot.getChildren()) {
                             Event event = ds.getValue(Event.class);
-                            display_events.add(event);
+                            temp.add(event);
+                        }
+                        for(Event e: temp){
+                            Button button = new Button(cur);
+                            //use event.name.hashcode() to assign buttonId
+                            button.setText(e.getName());
+                            button.setLayoutParams(new
+                                    LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                                    ViewGroup.LayoutParams.WRAP_CONTENT));
+                            button.setOnClickListener(new View.OnClickListener() {
+                                //start displayEventActivity when the button onclick
+                                public void onClick(View view) {
+                                    Intent is = new Intent(DisplayEventListActivity.this, DisplayEventActivity.class);
+                                    is.putExtra("customerObject", customerObject);
+                                    is.putExtra("event", e);
+                                    startActivity(is);}
+                            });
+                            ln.addView(button);
                         }
                     }
 
@@ -60,7 +80,7 @@ public class DisplayEventListActivity extends AppCompatActivity {
                     public void onCancelled(DatabaseError databaseError) {}
                 };
                 eventsRef.addListenerForSingleValueEvent(eventListener);
-                break;
+                return;
         }
         for(Event e: display_events){
             Button button = new Button(this);
@@ -80,4 +100,5 @@ public class DisplayEventListActivity extends AppCompatActivity {
             ln.addView(button);
         }
     }
+
 }
