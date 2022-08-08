@@ -16,6 +16,23 @@ import com.example.b07project.backend.Venue;
 import java.util.ArrayList;
 
 public class DisplayVenueListActivity extends AppCompatActivity {
-    ArrayList<Venue> display_events;
+
+    ArrayList<Venue> display_events = new ArrayList<Venue>();
+
+    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference VenueRef = rootRef.child("Venues");
+
+    ValueEventListener eventListener = new ValueEventListener();
+
+    @Override
+    public void onDataChange(DataSnapshot dataSnapshot) {
+        ArrayList<Venue> display_events = new ArrayList<Venue>();
+        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+            Venue ven = ds.getKey();
+            display_events.add(ven);
+        }
+    }
+
+    // VenueRef.addListenerForSingleValueEvent(eventListener);
 
 }
