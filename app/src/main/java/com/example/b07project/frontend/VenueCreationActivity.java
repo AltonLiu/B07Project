@@ -66,7 +66,6 @@ public class VenueCreationActivity extends AppCompatActivity {
         availableSports.add(new Sport("Tennis", 4));
         availableSports.add(new Sport("Volleyball", 12));
 
-        // TODO: read user inputs and call validateVenue
         validateVenueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
