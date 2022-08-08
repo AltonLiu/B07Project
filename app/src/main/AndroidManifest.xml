@@ -15,27 +15,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity android:name=".frontend.DisplayEventActivity"
-            android:parentActivityName=".frontend.CustomerMainActivity">
+            android:parentActivityName=".frontend.DisplayEventListActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".frontend.CustomerMainActivity" />
+                android:value=".frontend.DisplayEventListActivity" />
         </activity>
-        <activity android:name=".frontend.DisplayUpcomingActivity"
-            android:parentActivityName=".frontend.CustomerMainActivity">
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".frontend.CustomerMainActivity" />
-        </activity>
-        <activity android:name=".frontend.DisplayJoinedActivity"
-            android:parentActivityName=".frontend.CustomerMainActivity">
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".frontend.CustomerMainActivity" />
-        </activity>
-        <activity android:name=".frontend.DisplayScheduledActivity"
+        <activity android:name=".frontend.DisplayEventListActivity"
             android:parentActivityName=".frontend.CustomerMainActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data

@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.b07project.R;
 import com.example.b07project.backend.Customer;
@@ -39,17 +38,20 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
             case "select":
                 break;
             case "scheduled":
-                intent = new Intent(CustomerMainActivity.this, DisplayScheduledActivity.class);
+                intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
                 intent.putExtra("customerObject", customerObject);
+                intent.putExtra("displayType", "scheduled");
                 startActivity(intent);
                 break;
             case "joined":
-                intent = new Intent(CustomerMainActivity.this, DisplayJoinedActivity.class);
+                intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
                 intent.putExtra("customerObject", customerObject);
+                intent.putExtra("displayType", "joined");
                 startActivity(intent);
                 break;
             case "upcoming":
-                intent = new Intent(CustomerMainActivity.this, DisplayUpcomingActivity.class);
+                intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
+                intent.putExtra("displayType", "upcoming");
                 startActivity(intent);
                 break;
         }
