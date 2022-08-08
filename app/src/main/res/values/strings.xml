@@ -4,9 +4,4 @@
         <item>Customer</item>
         <item>Admin</item>
     </string-array>
-    <string-array name="customerMenu">
-        <item>Joined</item>
-        <item>Scheduled</item>
-        <item>Upcoming</item>
-    </string-array>
 </resources>

@@ -14,22 +14,22 @@
         android:theme="@style/Theme.B07Project"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".frontend.DisplayEventActivity"
-            android:exported="false"
-            android:launchMode="singleTask"/>
-        <activity
-            android:name=".frontend.DisplayUpcomingActivity"
-            android:exported="false"
-            android:launchMode="singleTask"/>
-        <activity
-            android:name=".frontend.DisplayJoinedActivity"
-            android:exported="false"
-            android:launchMode="singleTask"/>
-        <activity
-            android:name=".frontend.DisplayScheduledActivity"
-            android:exported="false"
-            android:launchMode="singleTask"/>
+        <activity android:name=".frontend.DisplayEventActivity"
+            android:parentActivityName=".frontend.DisplayEventListActivity"
+            android:launchMode="singleTask">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.DisplayEventListActivity" />
+        </activity>
+        <activity android:name=".frontend.DisplayEventListActivity"
+            android:parentActivityName=".frontend.CustomerMainActivity"
+            android:launchMode="singleTask">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.CustomerMainActivity" />
+        </activity>
         <activity
             android:name=".frontend.VenueCreationActivity"
             android:parentActivityName=".frontend.AdminLanding"

@@ -3,7 +3,7 @@ package com.example.b07project.backend;
 import java.io.Serializable;
 
 public class Event implements Serializable {
-    private static String name;
+    private String name;
     private long start_time;
     private long end_time;
     private Venue location;
@@ -31,7 +31,7 @@ public class Event implements Serializable {
         return sport_type;
     }
 
-    public static String getName() {
+    public String getName() {
         return name;
     }
 
