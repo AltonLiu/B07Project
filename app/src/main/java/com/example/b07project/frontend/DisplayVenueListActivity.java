@@ -19,6 +19,8 @@ public class DisplayVenueListActivity extends AppCompatActivity {
 
     ArrayList<Venue> display_events = new ArrayList<Venue>();
 
+    /*
+
     DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
     DatabaseReference VenueRef = rootRef.child("Venues");
 
@@ -32,6 +34,7 @@ public class DisplayVenueListActivity extends AppCompatActivity {
             display_events.add(ven);
         }
     }
+    */
 
     // VenueRef.addListenerForSingleValueEvent(eventListener);
 
