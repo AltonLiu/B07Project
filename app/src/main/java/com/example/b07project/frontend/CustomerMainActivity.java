@@ -31,17 +31,17 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
 
-        /*
+
         list_venues_button = (Button) findViewById(R.id.list_venues_button);
         list_venues_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CustomerMainActivity.this, VenueCreationActivity.class);
-                intent.putExtra("adminObject", adminObject);
+                Intent intent = new Intent(CustomerMainActivity.this, DisplayVenueListActivity.class);
+                //intent.putExtra("adminObject", adminObject);
                 startActivity(intent);
             }
         });
-        */
+
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
