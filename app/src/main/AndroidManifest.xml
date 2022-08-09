@@ -15,14 +15,25 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity android:name=".frontend.DisplayEventActivity"
-            android:parentActivityName=".frontend.DisplayEventListActivity">
+            android:parentActivityName=".frontend.DisplayEventListActivity"
+            android:launchMode="singleTask">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".frontend.DisplayEventListActivity" />
         </activity>
         <activity android:name=".frontend.DisplayEventListActivity"
-            android:parentActivityName=".frontend.CustomerMainActivity">
+            android:parentActivityName=".frontend.CustomerMainActivity"
+            android:launchMode="singleTask">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.CustomerMainActivity" />
+        </activity>
+        //kevin added this for DisplayVenueListActivity Aug 8th
+        <activity android:name=".frontend.DisplayVenueListActivity"
+            android:parentActivityName=".frontend.CustomerMainActivity"
+            android:launchMode="singleTask">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -30,7 +41,8 @@
         </activity>
         <activity
             android:name=".frontend.VenueCreationActivity"
-            android:parentActivityName=".frontend.AdminLanding">
+            android:parentActivityName=".frontend.AdminLanding"
+            android:launchMode="singleTask">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
@@ -39,7 +51,8 @@
         </activity>
         <activity
             android:name=".frontend.AdminLanding"
-            android:parentActivityName=".frontend.LoginActivity">
+            android:parentActivityName=".frontend.LoginActivity"
+            android:launchMode="singleTask">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
@@ -48,7 +61,8 @@
         </activity>
         <activity
             android:name=".frontend.LoginActivity"
-            android:parentActivityName=".frontend.MainActivity">
+            android:parentActivityName=".frontend.MainActivity"
+            android:launchMode="singleTask">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
@@ -57,7 +71,8 @@
         </activity>
         <activity
             android:name=".frontend.RegisterActivity"
-            android:parentActivityName=".frontend.MainActivity">
+            android:parentActivityName=".frontend.MainActivity"
+            android:launchMode="singleTask">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
@@ -66,7 +81,8 @@
         </activity>
         <activity
             android:name=".frontend.CustomerMainActivity"
-            android:parentActivityName=".frontend.LoginActivity">
+            android:parentActivityName=".frontend.LoginActivity"
+            android:launchMode="singleTask">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
@@ -75,7 +91,8 @@
         </activity>
         <activity
             android:name=".frontend.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
