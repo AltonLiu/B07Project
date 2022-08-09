@@ -8,6 +8,9 @@ public class Event implements Serializable {
     private long end_time;
     private Venue location;
     private Sport sport_type;
+
+    public Event(){}
+
     public Event(String name, long start, long end, Venue location, Sport sport){
 
         this.name = name;
@@ -28,8 +31,6 @@ public class Event implements Serializable {
         Event event = (Event) o;
         return this.name.equals(event.getName());
     }
-
-    public Event(){}
 
     public long getEnd_time() {
         return end_time;
