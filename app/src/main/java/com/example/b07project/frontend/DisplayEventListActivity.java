@@ -1,22 +1,41 @@
 package com.example.b07project.frontend;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.b07project.R;
+import com.example.b07project.backend.Admin;
 import com.example.b07project.backend.Customer;
 import com.example.b07project.backend.Event;
+import com.example.b07project.backend.Sport;
+import com.example.b07project.backend.Venue;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DisplayEventListActivity extends AppCompatActivity {
     ArrayList<Event> display_events;
+    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference eventsRef = mDatabase.child("Events");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +43,20 @@ public class DisplayEventListActivity extends AppCompatActivity {
         Customer customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
         String displayType = (String) getIntent().getStringExtra("displayType");
         LinearLayout ln = (LinearLayout) this.findViewById(R.id.linearlayout);
+        eventsRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot childSnapshot: snapshot.getChildren()) {
+                    Event e = childSnapshot.getValue(Event.class);
+                    display_events.add(e);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed");
+            }
+        });
         switch(displayType){
             case "joined":
                 display_events = customerObject.getJoined();
@@ -45,10 +78,12 @@ public class DisplayEventListActivity extends AppCompatActivity {
                 //start displayEventActivity when the button onclick
                 public void onClick(View view) {
                     Intent is = new Intent(DisplayEventListActivity.this, DisplayEventActivity.class);
+                    is.putExtra("customerObject", customerObject);
                     is.putExtra("event", e);
                     startActivity(is);}
             });
             ln.addView(button);
         }
     }
+
 }

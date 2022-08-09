@@ -8,6 +8,9 @@ public class Event implements Serializable {
     private long end_time;
     private Venue location;
     private Sport sport_type;
+
+    public Event(){}
+
     public Event(String name, long start, long end, Venue location, Sport sport){
 
         this.name = name;
@@ -17,7 +20,17 @@ public class Event implements Serializable {
         this.sport_type = sport;
     }
 
-    public Event(){}
+    @Override
+    public boolean equals(Object o){
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof Event)) {
+            return false;
+        }
+        Event event = (Event) o;
+        return this.name.equals(event.getName());
+    }
 
     public long getEnd_time() {
         return end_time;
