@@ -1,5 +1,6 @@
 package com.example.b07project.frontend;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.b07project.R;
 import com.example.b07project.backend.Customer;
+import com.example.b07project.backend.Event;
 import com.example.b07project.backend.Venue;
 import com.google.firebase.database.*;
 import android.content.*;
@@ -23,32 +25,44 @@ import java.util.*;
 
 public class DisplayVenueListActivity extends AppCompatActivity {
 
-    private TextView output;
-    public String lines = "";
+   private TextView output;
+    public String lines = "hi";
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference venRef = mDatabase.child("Venues");
+    DatabaseReference venref = mDatabase.child("Venues");
 
-    List<Venue> universityList = new ArrayList<>();
+    List<Venue> universityList;
 
-    ValueEventListener venlistener = new ValueEventListener() {
-        @Override
-        public void onDataChange(DataSnapshot snapshot) {
-            output = (TextView) findViewById(R.id.textView6);
-            universityList.clear();
-            lines = "";
-            for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                Venue ven = postSnapshot.getValue(Venue.class);
-                universityList.add(ven);
-                lines += ven.toString();
 
-                // here you can access to name property like university.name
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_display_venuelist);
+        output = (TextView) findViewById(R.id.textView6);
+        //output.setText(lines);
+
+        venref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                //setContentView(R.layout.activity_display_venuelist);
+                output = (TextView) findViewById(R.id.textView6);
+                universityList = new ArrayList<>();
+                //lines = "";
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    Venue ven = postSnapshot.getValue(Venue.class);
+                    universityList.add(ven);
+                    lines += ven.toString();
+                    System.out.println(ven.toString());
+
+                    // here you can access to name property like university.name
+                }
+                output.setText(lines);
             }
-            output.setText(lines);
-        }
 
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-            System.out.println("The read failed");
-        }
-    };
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed");
+            }
+        });
+    }
+
 }
