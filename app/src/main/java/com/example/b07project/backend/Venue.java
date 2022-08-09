@@ -41,4 +41,9 @@ public class Venue implements Serializable {
     public void setSports(ArrayList<Sport> sports) {
         this.sports = sports;
     }
+
+    @Override
+    public String toString() {
+        return "name: " + this.name + "address: " + this.address + "\n";
+    }
 }

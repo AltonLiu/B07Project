@@ -30,6 +30,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".frontend.CustomerMainActivity" />
         </activity>
+        //kevin added this for DisplayVenueListActivity Aug 8th
+        <activity android:name=".frontend.DisplayVenueListActivity"
+            android:parentActivityName=".frontend.CustomerMainActivity"
+            android:launchMode="singleTask">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".frontend.CustomerMainActivity" />
+        </activity>
         <activity
             android:name=".frontend.VenueCreationActivity"
             android:parentActivityName=".frontend.AdminLanding"

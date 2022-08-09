@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.b07project.R;
@@ -14,6 +15,7 @@ import com.example.b07project.backend.Customer;
 
 public class CustomerMainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     String[] customer_menu = {"select", "joined", "scheduled", "upcoming"};
+    private Button list_venues_button;
 
 
     @Override
@@ -28,6 +30,18 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
+
+
+        list_venues_button = (Button) findViewById(R.id.list_venues_button);
+        list_venues_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CustomerMainActivity.this, DisplayVenueListActivity.class);
+                //intent.putExtra("adminObject", adminObject);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
