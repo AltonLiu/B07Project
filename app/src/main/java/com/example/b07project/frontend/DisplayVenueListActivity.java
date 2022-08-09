@@ -26,7 +26,7 @@ import java.util.*;
 public class DisplayVenueListActivity extends AppCompatActivity {
 
    private TextView output;
-    public String lines = "Alina be cute as fuck";
+    public String lines = "";
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     DatabaseReference venref = mDatabase.child("Venues");
     List<Venue> venlist;
@@ -56,7 +56,7 @@ public class DisplayVenueListActivity extends AppCompatActivity {
                     // here you can access to name property like university.name
                 }
                 for(Venue v : venlist){
-                    //lines+=v.toString();
+                    lines+=v.toString();
                 }
                 output.setText(lines);
             }
