@@ -35,8 +35,8 @@ public class AdminLanding extends AppCompatActivity {
         filter_events_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminLanding.this, VenueCreationActivity.class);
-                intent.putExtra("adminObject", adminObject);
+                Intent intent = new Intent(AdminLanding.this, FilterEventActivity.class);
+                //intent.putExtra("adminObject", adminObject);
                 startActivity(intent);
             }
         });

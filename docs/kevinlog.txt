@@ -1,0 +1,49 @@
+7/31/2022:
+What I did:
+	- Attended first scrum
+	- reviewed project handout
+	- set up jira and firebase accounts
+
+8/1/2022:
+What I did:
+	- Organized my tasks
+	- Learned firebase documentation
+
+8/2/2022:
+What I did:
+	- Started g4-5
+
+8/3/2022:
+What I did:
+	- Occupied with finishing b09 assignment
+
+8/4/2022:
+What I did:
+	- worked on helper to get all data of one class
+
+8/5/2022:
+What I did:
+	- again worked on helper to get all data of one class
+
+8/6/2022:
+What I did:
+	- testing code
+
+8/7/2022:
+What I did:
+	- started frontend for g4-5
+	- finised get all data helper function
+
+8/8/2022:
+What I did:
+	- created frontend for g4-4
+	- created frontend for g4-5
+
+8/9/2022:
+What I did:
+	- finished g4-4, g4-5 backend activities
+	- connected g4-4 and g4-5 to their frontends
+
+8/10/2022:
+What I did:
+	- tested final implementation
