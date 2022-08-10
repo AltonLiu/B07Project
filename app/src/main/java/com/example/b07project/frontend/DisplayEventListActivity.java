@@ -59,6 +59,7 @@ public class DisplayEventListActivity extends AppCompatActivity {
                 eventsRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
+                        ln.removeAllViews();
                         for (DataSnapshot childSnapshot: snapshot.getChildren()) {
                             Event e = childSnapshot.getValue(Event.class);
                             display_events.add(e);
