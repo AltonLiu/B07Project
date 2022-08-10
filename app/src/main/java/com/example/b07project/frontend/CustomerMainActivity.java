@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.b07project.R;
 import com.example.b07project.backend.Customer;
@@ -17,11 +18,16 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
     String[] customer_menu = {"select", "joined", "scheduled", "upcoming"};
     Customer customerObject;
     private Button list_venues_button;
+    private TextView header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_main);
+        header = (TextView) findViewById(R.id.textView8);
+        customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
+
+        header.setText("VENEW / " + customerObject.getUsername());
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
         // Creating adapter for spinner
