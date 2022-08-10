@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DisplayEventListActivity extends AppCompatActivity {
-    ArrayList<Event> display_events = new ArrayList<>();
+    ArrayList<Event> display_events;
     Context cur = this;
     Customer customerObject;
     LinearLayout ln;
@@ -62,6 +62,7 @@ public class DisplayEventListActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 ln.removeAllViews();
+                display_events = new ArrayList<>();
                 for (DataSnapshot childSnapshot: snapshot.getChildren()) {
                     Event e = childSnapshot.getValue(Event.class);
                     if(!display_events.contains(e)){
