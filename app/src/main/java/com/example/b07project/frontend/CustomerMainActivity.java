@@ -38,6 +38,8 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
             public void onClick(View view) {
                 Intent intent = new Intent(CustomerMainActivity.this, DisplayVenueListActivity.class);
                 //intent.putExtra("adminObject", adminObject);
+                customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
+                intent.putExtra("customerObject", customerObject);
                 startActivity(intent);
             }
         });

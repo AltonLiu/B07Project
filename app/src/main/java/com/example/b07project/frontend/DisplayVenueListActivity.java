@@ -29,7 +29,7 @@ public class DisplayVenueListActivity extends AppCompatActivity {
 
     Context cur = this;
 
-    //Admin adminObject;
+    Customer customerObject;
     LinearLayout ln;
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     DatabaseReference venref = mDatabase.child("Venues");
@@ -48,7 +48,7 @@ public class DisplayVenueListActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
 
                 venlist = new ArrayList<>();
-
+                customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     Venue ven = postSnapshot.getValue(Venue.class);
                     venlist.add(ven);
@@ -82,6 +82,8 @@ public class DisplayVenueListActivity extends AppCompatActivity {
 
                     Intent is = new Intent(DisplayVenueListActivity.this, DisplayVenueActivity.class);
                     is.putExtra("venue", v);
+                    customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
+                    is.putExtra("customerObject", customerObject);
                     startActivity(is);}
             });
             ln.addView(button);
