@@ -102,3 +102,11 @@ What I did:
 -changed min sdk version from 21 to 26 to support LocalDataTime
 Plan:
 -testing and modify code accordingly
+
+10/8/2022
+What I did:
+-fixed the bug that upcoming events isn't synchronous
+-fixed the bug that joined wasn't synchronized after joining new events
+-fixed the bug that onDataChange reproduce duplicate events
+Plan:
+-N/A
