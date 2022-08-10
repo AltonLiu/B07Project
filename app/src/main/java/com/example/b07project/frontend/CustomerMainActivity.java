@@ -15,8 +15,8 @@ import com.example.b07project.backend.Customer;
 
 public class CustomerMainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     String[] customer_menu = {"select", "joined", "scheduled", "upcoming"};
+    Customer customerObject;
     private Button list_venues_button;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         // An item was selected, start the selected activity
-        Customer customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
+        customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
         final Intent intent;
         switch(parent.getItemAtPosition(pos).toString()) {
             case "select":
@@ -65,6 +65,7 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
                 break;
             case "upcoming":
                 intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
+                intent.putExtra("customerObject", customerObject);
                 intent.putExtra("displayType", "upcoming");
                 startActivity(intent);
                 break;
