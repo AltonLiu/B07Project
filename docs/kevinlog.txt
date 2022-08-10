@@ -1,3 +1,9 @@
+7/31/2022:
+What I did:
+	- Attended first scrum
+	- reviewed project handout
+	- set up jira and firebase accounts
+
 8/1/2022:
 What I did:
 	- Organized my tasks
@@ -38,3 +44,6 @@ What I did:
 	- finished g4-4, g4-5 backend activities
 	- connected g4-4 and g4-5 to their frontends
 
+8/10/2022:
+What I did:
+	- tested final implementation
