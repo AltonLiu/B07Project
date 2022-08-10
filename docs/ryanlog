@@ -1,1 +1,60 @@
+7/31/2022:
+    Contributions :
+        - Setup Git Repository + Jira Project
+    Contributions in the future :
+        - Assign roles and tasks to complete User Stories
+    Roadblocks :
+        - N/A
 
+ 8/01/2022:
+    Contributions :
+        - Assigned Roles and Tasks on Jira for User Stories
+        - Started Sprint 1
+    Contributions in the future :
+        - Implement backend Data Classes + File Structure
+    Roadblocks :
+        - N/A
+
+ 8/02/2022:
+    Contributions :
+        - Worked on backend Authentication to validate Users upon register and login
+    Contributions in the future :
+        - Setup Firebase for Users
+        - Finish RegisterActivity and make Frontend UI look better
+    Roadblocks :
+        - N/A
+
+ 8/03/2022:
+    Contributions :
+        - Implement back end classes
+    Contributions in the future :
+        - Work on RegisterActivity
+        - Work on LoginActivity
+    Roadblocks :
+        - N/A
+
+ 8/04/2002:
+    Contributions :
+        - Setup Firebase for Users
+        - Finish RegisterActivity
+    Contributions in the future :
+        - Work on LoginActivity
+    Roadblocks :
+        - Learn Firebase and how to read/write data
+
+ 8/05/2002:
+    Contributions :
+        - Created Frontend for LoginActivity + helped Alton with backend logic
+    Contributions in the future :
+        - Finish LoginActivity
+    Roadblocks :
+        N/A
+
+
+  8/06/2002:
+    Contributions :
+        - Finished LoginActivity with Alton
+    Contributions in the future :
+        - Fix Frontend UI to look more presentable
+    Roadblocks :
+        N/A
