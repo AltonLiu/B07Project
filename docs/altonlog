@@ -1,3 +1,12 @@
+Alton Liu
+Summary of Tasks:
+- Scrum master
+- Created git repo, Firebase database, and Jira project
+- Created User, Admin, Sport, and Venue classes
+- Completed LoginActivity.java, VenueCreationActivity.java, AdminLanding.java and their corresponding .xml files
+- Finished user stories "As an admin, I want to log in to my account, so that I can securely manage venues"
+and "As an admin, I should be able to add a new venue, so that customers can schedule events at it"
+
 7/31/2022:
     What I did:
     - Created git repo and Jira project
