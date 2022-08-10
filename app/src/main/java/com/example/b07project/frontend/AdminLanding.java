@@ -28,7 +28,7 @@ public class AdminLanding extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Admin adminObject = (Admin) getIntent().getSerializableExtra("adminObject");
-        name.setText("Welcome, " +  adminObject.getUsername());
+        name.setText("VENEW / " +  adminObject.getUsername());
         venueCreationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
