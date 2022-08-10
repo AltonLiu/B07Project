@@ -65,10 +65,8 @@ public class DisplayEventListActivity extends AppCompatActivity {
                 display_events = new ArrayList<>();
                 for (DataSnapshot childSnapshot: snapshot.getChildren()) {
                     Event e = childSnapshot.getValue(Event.class);
-                    display_events.add(e);
-                }
-                if(displayType.equals("scheduled") || displayType.equals("joined")){
-                    display_events.remove(0);
+                    if(!display_events.contains(e)){
+                        display_events.add(e);}
                 }
                 customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
                 create_buttons();
