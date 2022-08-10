@@ -68,6 +68,11 @@ public class DisplayEventListActivity extends AppCompatActivity {
                     if(!display_events.contains(e)){
                         display_events.add(e);}
                 }
+
+                if(displayType.equals("scheduled") || displayType.equals("joined")){
+                    display_events.remove(0);
+                }
+
                 customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
                 create_buttons();
             }

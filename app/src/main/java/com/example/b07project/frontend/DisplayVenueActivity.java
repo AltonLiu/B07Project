@@ -70,7 +70,11 @@ public class DisplayVenueActivity extends AppCompatActivity {
                     }
                 }
 
-                validateVenue(customerObject, name_string, start_long, end_long, v, selected_sport);
+                if (selected_sport == null) {
+                    Toast.makeText(DisplayVenueActivity.this, "Invalid sport", Toast.LENGTH_LONG).show();
+                } else {
+                    validateVenue(customerObject, name_string, start_long, end_long, v, selected_sport);
+                }
             }
         });
     }
