@@ -1,3 +1,19 @@
+Ryan Ramroop | Scrum Notes
+Summary of Tasks:
+    Implementations:
+        - RegisterActivity
+        - LoginActivity [Shared]
+        - Customer [Shared]
+        - User [Modifications]
+        - Firebase (User) [Shared] 
+
+        - All XML files (Part of Implementation + Final UI Design)
+
+    User Stories: 
+        - As a customer, I want to sign up and log in to my account, so that I can securely access my data.
+        - As an admin, I want to log in to my account, so that I can securely manage venues [Part]
+
+
 7/31/2022:
     Contributions :
         - Networking with Group Members
