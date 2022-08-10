@@ -65,6 +65,7 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
                 break;
             case "upcoming":
                 intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
+                intent.putExtra("customerObject", customerObject);
                 intent.putExtra("displayType", "upcoming");
                 startActivity(intent);
                 break;

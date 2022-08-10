@@ -33,42 +33,56 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DisplayEventListActivity extends AppCompatActivity {
-    ArrayList<Event> display_events;
+    ArrayList<Event> display_events = new ArrayList<>();
+    Context cur = this;
+    Customer customerObject;
+    LinearLayout ln;
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     DatabaseReference eventsRef = mDatabase.child("Events");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_eventlist);
-        Customer customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
+        customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
         String displayType = (String) getIntent().getStringExtra("displayType");
-        LinearLayout ln = (LinearLayout) this.findViewById(R.id.linearlayout);
-        eventsRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                for (DataSnapshot childSnapshot: snapshot.getChildren()) {
-                    Event e = childSnapshot.getValue(Event.class);
-                    display_events.add(e);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("The read failed");
-            }
-        });
+        ln = (LinearLayout) this.findViewById(R.id.linearlayout);
         switch(displayType){
             case "joined":
                 display_events = customerObject.getJoined();
+                create_buttons();
                 break;
             case "scheduled":
                 display_events = customerObject.getScheduled();
+                create_buttons();
                 break;
             case "upcoming":
+                eventsRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+                        for (DataSnapshot childSnapshot: snapshot.getChildren()) {
+                            Event e = childSnapshot.getValue(Event.class);
+                            display_events.add(e);
+                        }
+                        customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
+                        if(customerObject == null){
+                            Log.d("test", "null customer");
+                        }
+                        create_buttons();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        System.out.println("The read failed");
+                    }
+                });
                 break;
         }
+        return;
+    }
+
+    public void create_buttons(){
         for(Event e: display_events){
-            Button button = new Button(this);
+            Button button = new Button(cur);
             //use event.name.hashcode() to assign buttonId
             button.setText(e.getName());
             button.setLayoutParams(new

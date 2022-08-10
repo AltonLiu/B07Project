@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class DisplayEventActivity extends AppCompatActivity {
     TextView startTime, endTime, location, sport, name;
     Button status;
     Customer customerObject;
+    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     Event e;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +61,7 @@ public class DisplayEventActivity extends AppCompatActivity {
                         break;
                     case "join":
                         customerObject.join_event(e);
-                        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                        mDatabase.child("users").child(customerObject.getUsername()).child("joined").setValue(e);
+                        mDatabase.child("Users").child(customerObject.getUsername()).child("joined").child(e.getName()).setValue(e);
                         Toast.makeText(getApplicationContext(),"joined!",Toast.LENGTH_SHORT).show();
                         status.setText("joined");
                         break;
