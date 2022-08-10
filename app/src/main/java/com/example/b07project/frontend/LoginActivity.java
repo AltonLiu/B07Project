@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             Customer customerObject = dataSnapshot.getValue(Customer.class);
                             if (customerObject.getPassword().equals(password)) {
-                                Log.d("Admin", "Login Success");
+                                Log.d("Customer", "Login Success");
                                 progress.setVisibility(View.INVISIBLE);
                                 errorMSG.setVisibility(View.INVISIBLE);
                                 Intent intent = new Intent(LoginActivity.this, CustomerMainActivity.class);
