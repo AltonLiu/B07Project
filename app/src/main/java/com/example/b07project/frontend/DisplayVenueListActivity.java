@@ -66,6 +66,8 @@ public class DisplayVenueListActivity extends AppCompatActivity {
     }
 
     public void create_buttons(){
+        ln.removeAllViews();
+
         for(Venue v: venlist){
             Button button = new Button(cur);
             //use event.name.hashcode() to assign buttonId
