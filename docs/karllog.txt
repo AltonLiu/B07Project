@@ -1,3 +1,21 @@
+
+Stories:
+-As a customer, I should be able to see all events I scheduled or joined, so that I can keep track of 
+my activities. 
+-As a customer, I want to see a list of upcoming events, so that I can join an event I like.
+
+Implement:
+-DisplayEventActivity
+-DisplayEventListActivity
+-CustomerMainActivity
+-(part of)Customer
+-(part of)Event
+
+-acitivty_display_event
+-activity_display_eventlist
+-activity_customer_main
+
+Scrum:
 7/31/2022
 What I did:
 -created Customer class, Event class
