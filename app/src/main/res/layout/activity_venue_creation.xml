@@ -67,13 +67,8 @@
         android:id="@+id/validateVenueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:layout_marginTop="12dp"
         android:text="Create Venue"
-=======
-        android:layout_marginTop="32dp"
-        android:text="Create"
->>>>>>> 79d3fa5b9c9785d2595d4e522f70343a40599eda
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
