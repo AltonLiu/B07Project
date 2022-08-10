@@ -89,7 +89,8 @@ public class DisplayVenueActivity extends AppCompatActivity {
                     //send event to database
                     //customer set scheduled event
                     co.schedule_event(new_e);
-                    mDatabase.child("Users").child(co.getUsername()).setValue(co);
+                    mDatabase.child("Users").child(co.getUsername()).child("scheduled").setValue(co.getScheduled());
+                    Toast.makeText(DisplayVenueActivity.this, "Event has been scheduled", Toast.LENGTH_LONG).show();
                 }
             }
             @Override
