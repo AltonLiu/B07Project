@@ -29,7 +29,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,17 +61,12 @@ public class DisplayEventListActivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot snapshot) {
                         for (DataSnapshot childSnapshot: snapshot.getChildren()) {
                             Event e = childSnapshot.getValue(Event.class);
-                            String e_date = Long.toString(e.getStart_time());
-                            LocalDateTime now = LocalDateTime.now();
-                            LocalDateTime e_time = LocalDateTime.of(Integer.parseInt(e_date.substring(0,4)),
-                                    Integer.parseInt(e_date.substring(4,6)),
-                                    Integer.parseInt(e_date.substring(6,8)),
-                                    Integer.parseInt(e_date.substring(8,10)),
-                                    Integer.parseInt(e_date.substring(10)));
-                            if(e_time.isAfter(now)){
-                                display_events.add(e);}
+                            display_events.add(e);
                         }
                         customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
+                        if(customerObject == null){
+                            Log.d("test", "null customer");
+                        }
                         create_buttons();
                     }
 

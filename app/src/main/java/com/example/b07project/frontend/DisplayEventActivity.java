@@ -61,7 +61,7 @@ public class DisplayEventActivity extends AppCompatActivity {
                         break;
                     case "join":
                         customerObject.join_event(e);
-                        mDatabase.child("Users").child(customerObject.getUsername()).child("joined").setValue(customerObject.getJoined());
+                        mDatabase.child("Users").child(customerObject.getUsername()).child("joined").child(e.getName()).setValue(e);
                         Toast.makeText(getApplicationContext(),"joined!",Toast.LENGTH_SHORT).show();
                         status.setText("joined");
                         break;

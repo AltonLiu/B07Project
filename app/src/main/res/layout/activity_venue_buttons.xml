@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ScrollView
-        android:id="@+id/joineddisplay1"
+        android:id="@+id/joineddisplay2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,17 +17,17 @@
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:id="@+id/linearlayout1"
+            android:id="@+id/linearlayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/joinedtitle1"
+                android:id="@+id/joinedtitle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="View Event at Venue:" />
+                android:text="Schedule Event at Venue:" />
         </LinearLayout>
     </ScrollView>
 

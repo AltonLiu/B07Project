@@ -1,6 +1,5 @@
 package com.example.b07project.frontend;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,20 +12,11 @@ import android.widget.Spinner;
 
 import com.example.b07project.R;
 import com.example.b07project.backend.Customer;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class CustomerMainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     String[] customer_menu = {"select", "joined", "scheduled", "upcoming"};
     Customer customerObject;
-    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference userRef = mDatabase.child("Users");
     private Button list_venues_button;
-    String username;
-    String select;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +30,6 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
-        customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
-        username = customerObject.getUsername();
 
 
         list_venues_button = (Button) findViewById(R.id.list_venues_button);
@@ -57,41 +45,31 @@ public class CustomerMainActivity extends AppCompatActivity implements AdapterVi
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-        select = parent.getItemAtPosition(pos).toString();
-        // prepare the customer data
-        ValueEventListener valueEventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Customer customer = dataSnapshot.child(username).getValue(Customer.class);
-                Intent intent;
-                // An item was selected, start the selected activity
-                switch(select) {
-                    case "select":
-                        break;
-                    case "scheduled":
-                        intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
-                        intent.putExtra("customerObject", customer);
-                        intent.putExtra("displayType", "scheduled");
-                        startActivity(intent);
-                        break;
-                    case "joined":
-                        intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
-                        intent.putExtra("customerObject", customer);
-                        intent.putExtra("displayType", "joined");
-                        startActivity(intent);
-                        break;
-                    case "upcoming":
-                        intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
-                        intent.putExtra("customerObject", customer);
-                        intent.putExtra("displayType", "upcoming");
-                        startActivity(intent);
-                        break;
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {}
-        };
-        userRef.addListenerForSingleValueEvent(valueEventListener);
+        // An item was selected, start the selected activity
+        customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
+        final Intent intent;
+        switch(parent.getItemAtPosition(pos).toString()) {
+            case "select":
+                break;
+            case "scheduled":
+                intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
+                intent.putExtra("customerObject", customerObject);
+                intent.putExtra("displayType", "scheduled");
+                startActivity(intent);
+                break;
+            case "joined":
+                intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
+                intent.putExtra("customerObject", customerObject);
+                intent.putExtra("displayType", "joined");
+                startActivity(intent);
+                break;
+            case "upcoming":
+                intent = new Intent(CustomerMainActivity.this, DisplayEventListActivity.class);
+                intent.putExtra("customerObject", customerObject);
+                intent.putExtra("displayType", "upcoming");
+                startActivity(intent);
+                break;
+        }
     }
 
     public void onNothingSelected(AdapterView<?> parent) {

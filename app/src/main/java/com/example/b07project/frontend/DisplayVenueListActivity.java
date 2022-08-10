@@ -25,40 +25,37 @@ import java.util.*;
 
 public class DisplayVenueListActivity extends AppCompatActivity {
 
-   private TextView output;
-    public String lines = "";
+    List<Venue> venlist;
+
+    Context cur = this;
+
+    //Admin adminObject;
+    LinearLayout ln;
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     DatabaseReference venref = mDatabase.child("Venues");
-    List<Venue> venlist;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_venuelist);
-        output = (TextView) findViewById(R.id.textView6);
-        //output.setText(lines);
+        setContentView(R.layout.activity_venue_buttons);
+        ln = (LinearLayout) this.findViewById(R.id.linearlayout2);
+
 
         venref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                //setContentView(R.layout.activity_display_venuelist);
-                output = (TextView) findViewById(R.id.textView6);
+
                 venlist = new ArrayList<>();
-                //lines = "";
+
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     Venue ven = postSnapshot.getValue(Venue.class);
                     venlist.add(ven);
-                    //lines += ven.toString();
-                    //System.out.println(ven.toString());
 
-                    // here you can access to name property like university.name
                 }
-                for(Venue v : venlist){
-                    lines+=v.toString();
-                }
-                output.setText(lines);
+
+                create_buttons();
             }
 
             @Override
@@ -66,6 +63,29 @@ public class DisplayVenueListActivity extends AppCompatActivity {
                 System.out.println("The read failed");
             }
         });
+    }
+
+    public void create_buttons(){
+        for(Venue v: venlist){
+            Button button = new Button(cur);
+            //use event.name.hashcode() to assign buttonId
+            button.setText(v.toString());
+            button.setLayoutParams(new
+                    LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT));
+
+
+            button.setOnClickListener(new View.OnClickListener() {
+                //start displayEventActivity when the button onclick
+
+                public void onClick(View view) {
+
+                    Intent is = new Intent(DisplayVenueListActivity.this, DisplayVenueActivity.class);
+                    is.putExtra("venue", v);
+                    startActivity(is);}
+            });
+            ln.addView(button);
+        }
     }
 
 }
