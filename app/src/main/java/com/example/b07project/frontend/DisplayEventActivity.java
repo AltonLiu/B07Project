@@ -55,10 +55,7 @@ public class DisplayEventActivity extends AppCompatActivity {
                 location.setText(e.getLocation().getName());
                 sport.setText(e.getSport_type().getName());
                 name.setText(e.getName());
-                if(customer.getScheduled().contains(e)){
-                    status.setText("scheduled");
-                }
-                else if(customer.getJoined().contains(e)){
+                if(customer.getJoined().contains(e)){
                     status.setText("joined");
                 }
                 else{
@@ -69,16 +66,17 @@ public class DisplayEventActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         switch(status.getText().toString()){
                             case "scheduled":
-                                Toast.makeText(getApplicationContext(),"already scheduled",Toast.LENGTH_SHORT).show();
-                                break;
-                            case "joined":
-                                Toast.makeText(getApplicationContext(),"already joined",Toast.LENGTH_SHORT).show();
-                                break;
                             case "join":
+                                if(customer.getJoined().contains(e)){
+                                    break;
+                                }
                                 customer.join_event(e);
                                 mDatabase.child("Users").child(customerObject.getUsername()).child("joined").setValue(customer.getJoined());
                                 Toast.makeText(getApplicationContext(),"joined!",Toast.LENGTH_SHORT).show();
                                 status.setText("joined");
+                                break;
+                            case "joined":
+                                Toast.makeText(getApplicationContext(),"already joined",Toast.LENGTH_SHORT).show();
                                 break;
                         }
                     }
