@@ -1,3 +1,19 @@
+Stories i did: G4-4 G4-5
+Functions I implemented:
+	As a customer, I want to see the list of venues and the sports activities available at each venue,
+	so that I can schedule an event.
+	As an admin, I should be able to filter upcoming events by venue, so that I can make the
+	necessary arrangements at that venue.
+Files I added:
+- DisplayVenueActivity.java
+- DisplayVenueListActivity.java
+- FilterDisplayActivity.java
+- FilterEventActicity.java
+- filter_landing.xml
+- activity_display_venuelist.xml
+- activity_activity_venue_buttons.xml
+- activity_event_creation.xml
+
 7/31/2022:
 What I did:
 	- Attended first scrum
