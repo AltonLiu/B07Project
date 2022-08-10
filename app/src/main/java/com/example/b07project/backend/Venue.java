@@ -44,6 +44,18 @@ public class Venue implements Serializable {
 
     @Override
     public String toString() {
-        return "name: " + this.name + "address: " + this.address + "\n";
+        String output = "";
+        output += "name: " + this.name + "\n";
+        output += "address: " + this.address + "\n";
+        output += "sports: ";
+        for (Sport s : this.sports) {
+            output += s.getName();
+            output += " ";
+        }
+
+        output += "\n";
+        output += "\n";
+
+        return output;
     }
 }

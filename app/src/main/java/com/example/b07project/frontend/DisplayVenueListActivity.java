@@ -26,11 +26,11 @@ import java.util.*;
 public class DisplayVenueListActivity extends AppCompatActivity {
 
    private TextView output;
-    public String lines = "hi";
+    public String lines = "";
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     DatabaseReference venref = mDatabase.child("Venues");
+    List<Venue> venlist;
 
-    List<Venue> universityList;
 
 
     @Override
@@ -45,15 +45,18 @@ public class DisplayVenueListActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 //setContentView(R.layout.activity_display_venuelist);
                 output = (TextView) findViewById(R.id.textView6);
-                universityList = new ArrayList<>();
+                venlist = new ArrayList<>();
                 //lines = "";
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     Venue ven = postSnapshot.getValue(Venue.class);
-                    universityList.add(ven);
-                    lines += ven.toString();
-                    System.out.println(ven.toString());
+                    venlist.add(ven);
+                    //lines += ven.toString();
+                    //System.out.println(ven.toString());
 
                     // here you can access to name property like university.name
+                }
+                for(Venue v : venlist){
+                    lines+=v.toString();
                 }
                 output.setText(lines);
             }
