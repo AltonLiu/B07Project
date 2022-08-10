@@ -1,5 +1,6 @@
 package com.example.b07project.frontend;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.b07project.R;
 import com.example.b07project.backend.Admin;
@@ -18,8 +20,11 @@ import com.example.b07project.backend.Customer;
 import com.example.b07project.backend.Event;
 import com.example.b07project.backend.Sport;
 import com.example.b07project.backend.Venue;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -74,11 +79,33 @@ public class DisplayVenueActivity extends AppCompatActivity {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         DatabaseReference venuesRef = mDatabase.child("Events");
 
+        venuesRef.child(name).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // Check if venue name exists in DB
+                if(!snapshot.exists()){
+                    Event new_e = new Event(name, start, end, v, s);
+                    mDatabase.child("Events").child(name).setValue(new_e);
+                    //send event to database
+                    //customer set scheduled event
+                    co.schedule_event(new_e);
+                    mDatabase.child("Users").child(co.getUsername()).setValue(co);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {}
+        });
+
+        /*
         Event new_e = new Event(name, start, end, v, s);
         mDatabase.child("Events").child(name).setValue(new_e);
         //send event to database
         //customer set scheduled event
         co.schedule_event(new_e);
         mDatabase.child("Users").child(co.getUsername()).setValue(co);
+
+         */
+
+
     }
 }
