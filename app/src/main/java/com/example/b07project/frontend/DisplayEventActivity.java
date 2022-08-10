@@ -65,11 +65,7 @@ public class DisplayEventActivity extends AppCompatActivity {
                     //start displayEventActivity when the button onclick
                     public void onClick(View view) {
                         switch(status.getText().toString()){
-                            case "scheduled":
                             case "join":
-                                if(customer.getJoined().contains(e)){
-                                    break;
-                                }
                                 customer.join_event(e);
                                 mDatabase.child("Users").child(customerObject.getUsername()).child("joined").setValue(customer.getJoined());
                                 Toast.makeText(getApplicationContext(),"joined!",Toast.LENGTH_SHORT).show();
