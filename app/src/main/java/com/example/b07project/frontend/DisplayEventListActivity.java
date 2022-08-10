@@ -38,48 +38,44 @@ public class DisplayEventListActivity extends AppCompatActivity {
     Customer customerObject;
     LinearLayout ln;
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference eventsRef = mDatabase.child("Events");
+    DatabaseReference mRef;
+    String displayType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_eventlist);
         customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
-        String displayType = (String) getIntent().getStringExtra("displayType");
         ln = (LinearLayout) this.findViewById(R.id.linearlayout);
+        displayType = (String) getIntent().getStringExtra("displayType");
         switch(displayType){
-            case "joined":
-                display_events = customerObject.getJoined();
-                create_buttons();
-                break;
             case "scheduled":
-                display_events = customerObject.getScheduled();
-                create_buttons();
+                mRef = mDatabase.child("Users").child(customerObject.getUsername()).child("scheduled");
+                break;
+            case "joined":
+                mRef = mDatabase.child("Users").child(customerObject.getUsername()).child("joined");
                 break;
             case "upcoming":
-                eventsRef.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot snapshot) {
-                        ln.removeAllViews();
-                        for (DataSnapshot childSnapshot: snapshot.getChildren()) {
-                            Event e = childSnapshot.getValue(Event.class);
-                            if(!display_events.contains(e)){
-                            display_events.add(e);}
-                        }
-                        customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
-                        if(customerObject == null){
-                            Log.d("test", "null customer");
-                        }
-                        create_buttons();
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        System.out.println("The read failed");
-                    }
-                });
+                mRef = mDatabase.child("Events");
                 break;
         }
-        return;
+        mRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                ln.removeAllViews();
+                for (DataSnapshot childSnapshot: snapshot.getChildren()) {
+                    Event e = childSnapshot.getValue(Event.class);
+                    if(!display_events.contains(e)){
+                        display_events.add(e);}
+                }
+                customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
+                create_buttons();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed");
+            }
+        });
     }
 
     public void create_buttons(){
