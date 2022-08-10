@@ -69,7 +69,7 @@ public class DisplayEventListActivity extends AppCompatActivity {
                         display_events.add(e);}
                 }
 
-                if(displayType.equals("scheduled") || displayType.equals("joined")){
+                if((displayType.equals("scheduled") || displayType.equals("joined")) && display_events.size() != 0){
                     display_events.remove(0);
                 }
 
