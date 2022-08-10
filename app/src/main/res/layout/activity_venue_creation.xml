@@ -35,27 +35,31 @@
 
     <EditText
         android:id="@+id/venueNameField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/fields"
         android:ems="10"
-        android:hint="Venue Name"
+        android:hint="Enter Venue Name"
         android:inputType="textPersonName"
+        android:paddingLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/venueAddressField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/fields"
         android:ems="10"
-        android:hint="Venue Address"
+        android:hint="Enter Venue Address"
         android:inputType="textPersonName"
+        android:paddingLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/venueNameField" />
 
@@ -63,10 +67,14 @@
         android:id="@+id/validateVenueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginTop="12dp"
         android:text="Create Venue"
+=======
+        android:layout_marginTop="32dp"
+        android:text="Create"
+>>>>>>> 79d3fa5b9c9785d2595d4e522f70343a40599eda
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
@@ -74,8 +82,8 @@
         android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
@@ -85,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
             android:text="Baseball"
+            android:textColor="@color/blue"
             app:layout_constraintBottom_toTopOf="@+id/checkBox6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -96,6 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Basketball"
+            android:textColor="@color/blue"
             app:layout_constraintBottom_toTopOf="@+id/checkBox7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -108,6 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="3dp"
             android:text="Ping Pong"
+            android:textColor="@color/blue"
             app:layout_constraintBottom_toTopOf="@+id/checkBox8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -120,6 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:text="Soccer"
+            android:textColor="@color/blue"
             app:layout_constraintBottom_toTopOf="@+id/checkBox9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -131,6 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="25dp"
             android:text="Tennis"
+            android:textColor="@color/blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -142,6 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="6dp"
             android:text="Volleyball"
+            android:textColor="@color/blue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -154,11 +168,36 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="32dp"
         android:text="Sports Available"
+        android:textColor="@color/blue"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/venueAddressField" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="232dp"
+        android:text="Venue Name"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/venueNameField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="220dp"
+        android:text="Venue Address"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/venueAddressField"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
