@@ -33,7 +33,7 @@
     Roadblocks :
         - N/A
 
- 8/04/2002:
+ 8/04/2022:
     Contributions :
         - Setup Firebase for Users
         - Finish RegisterActivity
@@ -42,19 +42,56 @@
     Roadblocks :
         - Learn Firebase and how to read/write data
 
- 8/05/2002:
+ 8/05/2022:
     Contributions :
         - Created Frontend for LoginActivity + helped Alton with backend logic
+        - Fixed Serialization errors in backend
     Contributions in the future :
         - Finish LoginActivity
     Roadblocks :
         N/A
 
 
-  8/06/2002:
+  8/06/2022:
     Contributions :
         - Finished LoginActivity with Alton
     Contributions in the future :
         - Fix Frontend UI to look more presentable
     Roadblocks :
         N/A
+
+
+  8/07/2022:
+    Contributions :
+        - Added More UI changes to Landing Page
+        - 
+    Contributions in the future :
+        - Fix Frontend UI to look more presentable
+    Roadblocks :
+        N/A
+
+  8/08/2022:
+    Contributions :
+        - Created App Name :D
+    Contributions in the future :
+        - Fix Admin + Customer UI Design 
+    Roadblocks :
+        N/A
+       
+  8/09/2022:
+    Contributions :
+        - Finished UI Design for Admin Dashboard + all pages exposed to admin
+    Contributions in the future :
+        - Fix Customer UI Design 
+    Roadblocks :
+        N/A
+ 8/10/2022:
+    Contributions :
+        - Finished UI Design for Customer Dashboard + all pages exposed to customer
+    Contributions in the future :
+        - Testing Backend 
+        - Ensure app functions
+    Roadblocks :
+        - Time
+
+
