@@ -91,6 +91,8 @@ public class DisplayVenueActivity extends AppCompatActivity {
                     co.schedule_event(new_e);
                     mDatabase.child("Users").child(co.getUsername()).child("scheduled").setValue(co.getScheduled());
                     Toast.makeText(DisplayVenueActivity.this, "Event has been scheduled", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(DisplayVenueActivity.this, "Event name already taken", Toast.LENGTH_LONG).show();
                 }
             }
             @Override
