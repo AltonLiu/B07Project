@@ -64,9 +64,6 @@ public class DisplayEventListActivity extends AppCompatActivity {
                             display_events.add(e);
                         }
                         customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
-                        if(customerObject == null){
-                            Log.d("test", "null customer");
-                        }
                         create_buttons();
                     }
 
