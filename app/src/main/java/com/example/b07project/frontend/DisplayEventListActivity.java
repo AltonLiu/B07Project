@@ -59,9 +59,11 @@ public class DisplayEventListActivity extends AppCompatActivity {
                 eventsRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
+                        ln.removeAllViews();
                         for (DataSnapshot childSnapshot: snapshot.getChildren()) {
                             Event e = childSnapshot.getValue(Event.class);
-                            display_events.add(e);
+                            if(!display_events.contains(e)){
+                            display_events.add(e);}
                         }
                         customerObject = (Customer) getIntent().getSerializableExtra("customerObject");
                         if(customerObject == null){
