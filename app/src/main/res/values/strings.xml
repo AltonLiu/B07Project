@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">B07 Project</string>
+    <string name="app_name">VENEW</string>
+    <string name="register">/Register</string>
+    <string-array name="usertypes">
+        <item>Customer</item>
+        <item>Admin</item>
+    </string-array>
 </resources>

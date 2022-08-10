@@ -1,0 +1,112 @@
+
+Stories:
+-As a customer, I should be able to see all events I scheduled or joined, so that I can keep track of 
+my activities. 
+-As a customer, I want to see a list of upcoming events, so that I can join an event I like.
+
+Implement:
+-DisplayEventActivity
+-DisplayEventListActivity
+-CustomerMainActivity
+-(part of)Customer
+-(part of)Event
+
+-acitivty_display_event
+-activity_display_eventlist
+-activity_customer_main
+
+Scrum:
+7/31/2022
+What I did:
+-created Customer class, Event class
+-modified class field
+-attempted to configure firebase
+Plan:
+-set up firebase
+-create customer screen
+
+8/1/2022
+What I did:
+-created customerMainActivity
+-moved activity class to backend
+Plan:
+-learn how to make dropdown menu
+-learn how to make a scrollable screen
+
+2/8/2022
+What I did:
+-learned spinner
+-learned scrollview
+Plan:
+-implement customerMainActivity
+-implement displayUpcomingEvent, displayScheduledEvent and displayJoinedEvent
+
+3/8/2022
+What I did:
+-implemented customerMainActivity
+-started working on displayScheduledEvent and displayJoinedEvent
+Plan:
+-implement correspond user interface
+-continue working on displayUpcomingEvent, displayScheduledEvent and displayJoinedEvent
+
+3/8/2022
+What I did:
+-created xml files for each customer page
+-working on displayUpcomingEvent, displayScheduledEvent and displayJoinedEvent
+Plan:
+-modify the code to make it more concise
+-create DisplayEventActivity to display event details
+
+4/8/2022
+What I did:
+-learned how to pass multiple objects through activities
+-implemented displayUpcomingEvent, displayScheduledEvent and displayJoinedEvent
+Plan:
+-implement DisplayEventActivity
+-test and finish customer event activities
+
+5/8/2022
+What I did:
+-redid code that was accidentally overwritten while demonstration
+-finished UIs of customer event activities 
+Plan:
+-test display joined events, display scheduled events and modify code accordingly
+
+6/8/2022
+What I did:
+-bug fix
+-finished displayEvent
+Plan:
+-implement displayUpcomingEvents
+
+7/8/2022
+What I did:
+-refactor three activities into one
+-implementing displayUpcomingEvents
+Plan:
+-finish displayUpcomingEvents
+Roadblocks:
+-database snapshot can't retrieve target
+
+8/8/2022
+What I did:
+-create status button to display current event status and let customer join unjoined event
+-continued working on retrieving events list from database
+Plan:
+-finish displayUpcomingEvents
+
+9/8/2022
+What I did:
+-finished displayUpcomingEvents
+-modified customerMainActivity to make the data synchronize with database while running
+-changed min sdk version from 21 to 26 to support LocalDataTime
+Plan:
+-testing and modify code accordingly
+
+10/8/2022
+What I did:
+-fixed the bug that upcoming events isn't synchronous
+-fixed the bug that joined wasn't synchronized after joining new events
+-fixed the bug that onDataChange reproduce duplicate events
+Plan:
+-N/A

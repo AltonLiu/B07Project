@@ -1,65 +1,116 @@
+Ryan Ramroop | Scrum Notes
+Summary of Tasks:
+    Implementations:
+        - RegisterActivity
+        - LoginActivity [Shared]
+        - Customer [Shared]
+        - User [Modifications]
+        - Firebase (User) [Shared] 
+
+        - All XML files (Part of Implementation + Final UI Design)
+
+    User Stories: 
+        - As a customer, I want to sign up and log in to my account, so that I can securely access my data.
+        - As an admin, I want to log in to my account, so that I can securely manage venues [Part]
+
+
 7/31/2022:
-    Contributions : 
+    Contributions :
+        - Networking with Group Members
         - Setup Git Repository + Jira Project
-    Contributions in the future : 
+    Contributions in the future :
         - Assign roles and tasks to complete User Stories
-    Roadblocks : 
+    Roadblocks :
         - N/A
-        
+
  8/01/2022:
-    Contributions : 
+    Contributions :
         - Assigned Roles and Tasks on Jira for User Stories
         - Started Sprint 1
-    Contributions in the future : 
+    Contributions in the future :
         - Implement backend Data Classes + File Structure
-    Roadblocks : 
+    Roadblocks :
         - N/A
-    
+
  8/02/2022:
-    Contributions : 
+    Contributions :
         - Worked on backend Authentication to validate Users upon register and login
-    Contributions in the future : 
+        - Created UserFactory class for different user types
+    Contributions in the future :
         - Setup Firebase for Users
         - Finish RegisterActivity and make Frontend UI look better
-    Roadblocks : 
+    Roadblocks :
         - N/A
-    
+
  8/03/2022:
-    Contributions : 
-        - Implement back end classes
-    Contributions in the future : 
+    Contributions :
+        - Implemented back end classes (Customer, AuthValidation, UserFactory)
+        - Ensured all classes had private fields and getters/setters
+    Contributions in the future :
         - Work on RegisterActivity
         - Work on LoginActivity
-    Roadblocks : 
+    Roadblocks :
         - N/A
- 
- 8/04/2002:
-    Contributions : 
+
+ 8/04/2022:
+    Contributions :
         - Setup Firebase for Users
         - Finish RegisterActivity
-    Contributions in the future : 
+    Contributions in the future :
         - Work on LoginActivity
-    Roadblocks : 
+    Roadblocks :
         - Learn Firebase and how to read/write data
-        
- 8/05/2002:
-    Contributions : 
+
+ 8/05/2022:
+    Contributions :
         - Created Frontend for LoginActivity + helped Alton with backend logic
-    Contributions in the future : 
+    Contributions in the future :
         - Finish LoginActivity
-    Roadblocks : 
+    Roadblocks :
         N/A
-        
-        
-  8/06/2002:
-    Contributions : 
+
+
+  8/06/2022:
+    Contributions :
         - Finished LoginActivity with Alton
-    Contributions in the future : 
+    Contributions in the future :
         - Fix Frontend UI to look more presentable
-    Roadblocks : 
+    Roadblocks :
+        N/A
+
+
+  8/07/2022:
+    Contributions :
+        - Added More UI changes to Landing Page
+        - 
+    Contributions in the future :
+        - Fix Frontend UI to look more presentable
+    Roadblocks :
+        N/A
+
+  8/08/2022:
+    Contributions :
+        - Created App Name :D (VENEW)
+    Contributions in the future :
+        - Fix Admin + Customer UI Design 
+    Roadblocks :
+        N/A
+       
+  8/09/2022:
+    Contributions :
+        - Finished UI Design for Admin Dashboard + all pages exposed to admin
+    Contributions in the future :
+        - Fix Customer UI Design 
+    Roadblocks :
         N/A
         
-        
-        
-        
-      
+ 8/10/2022:
+    Contributions :
+        - Finished UI Design for Customer Dashboard + all pages exposed to customer
+    Contributions in the future :
+        - Testing Backend 
+        - Ensure app functions
+    Roadblocks :
+        - Time
+
+

@@ -1,3 +1,100 @@
+Alton Liu
+Summary of Tasks:
+- Scrum master
+- Created git repo, Firebase database, and Jira project
+- Created User, Admin, Sport, and Venue classes
+- Completed LoginActivity.java, VenueCreationActivity.java, AdminLanding.java and their corresponding .xml files
+- Finished user stories "As an admin, I want to log in to my account, so that I can securely manage venues"
+and "As an admin, I should be able to add a new venue, so that customers can schedule events at it"
+
 7/31/2022:
+    What I did:
     - Created git repo and Jira project
-    -
+    - Created User abstract class, Venue class, and Activity class
+    What I plan to do:
+    - Learn about FireBase
+    - Create Admin class
+    Roadblocks:
+    - N/A
+8/1/2022:
+    What I did:
+    - Created Admin class
+    - Added Firebase SDK to the project
+    - Learned about reading/writing data with Firebase
+    What I plan to do:
+    - Figure out how to implement a global list of venues on the server
+    - Implement functionality to add newly created Venues to server Venue list
+    Roadblocks:
+    - N/A
+8/2/2022:
+    What I did:
+    - Learned about reading/writing data with Firebase
+    What I plan to do:
+    - Set up Admin registration
+    Roadblocks:
+    - N/A
+8/3/2022:
+    What I did:
+    - Started working on app main page and user sign up page
+    - Played around with writing and reading FireBase data
+    - Modified Sport, User, Venue, and Admin classes to allow uploading them to FireBase
+    - Added email field to User and refactored subclasses to account for this
+    What I plan to do:
+    - Set up Admin registration and Admin database
+    Roadblocks:
+    - N/A
+8/4/2022:
+    What I did:
+    - Added method to Admin to allow creating and uploading Venue objects
+    - Worked on setting up login logic for both types of accounts
+    What I plan to do:
+    - Create admin landing page, which will appear once the admin logs in
+    Roadblocks:
+    - Need someone to create the LoginActivity UI with a username and password input, plus a login button
+8/5/2022:
+    What I did:
+    - Finished setting up login logic for both types of accounts and passing object of the user to next screen
+    What I plan to do:
+    - Create admin landing page, which will appear once the admin logs in and allows admins to create venues
+    Roadblocks:
+    - N/A
+8/6/2022:
+    What I did:
+    - Finished backend logic for creating and uploading venues
+    - Added button to admin landing page to go to venue creation screen
+    - Created Venue creation screen with field allowing user input
+    - Resolved conflicts in login UI update branch and merged with develop
+    What I plan to do:
+    - Finish and test venue creation UI
+    Roadblocks:
+    - N/A
+8/7/2022:
+    What I did:
+    - Finished venue creation UI
+    - Integrated venue creation UI elements and user inputs with backend logic
+    What I plan to do:
+    - Finish testing venue creation UI
+    Roadblocks:
+    - N/A
+8/8/2022:
+    What I did:
+    - Finished testing venue creation UI
+    - Helped others with reading arraylists from the server
+    What I plan to do:
+    - Help others with reading arraylists from the server if issues aren't resolved
+    Roadblocks:
+    - N/A
+8/9/2022:
+    What I did:
+    - Debugged issue with null pointers when reading arraylists from server
+    What I plan to do:
+    - Ensure all the deliverables are complete and hand in the project files
+    Roadblocks:
+    - N/A
+8/10/2022:
+    What I did:
+    - Ensure all the deliverables are complete and hand in the project files
+    What I plan to do:
+    - N/A since all tasks are done
+    Roadblocks:
+    - N/A
